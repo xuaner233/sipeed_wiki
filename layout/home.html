@@ -22,7 +22,7 @@
 
 <div id="products">
     <n-card>
-        <n-tabs default-value="chap1" type="segment" size="large" animated style="margin: 0 -4px"
+        <n-tabs default-value="chap2" type="segment" size="large" animated style="margin: 0 -4px"
             pane-style="padding-left: 4px; padding-right: 4px; box-sizing: border-box;">
             <n-tab-pane name="chap1" tab="产品中心">
                 <n-tabs default-value="oasis" type="card" tab-style="justify-content:center; display: flex; padding-left: 15px; padding-right: 15px; text-align: center; margin: 0 auto; font-size: 20px; " class="custom-tabs">
@@ -748,34 +748,65 @@
             <n-tab-pane name="chap2" tab="最新动态">
                 <n-card class="news_background" hoverable>
                     <n-grid cols="6" item-responsive responsive="screen">
-                        <n-grid-item span="6 m:0 l:0">
+                        <n-grid-item span="6 m:0 l:0" style="margin-left: 10px; margin-right: 10px; ">
                             <img class="normal-img" src="https://picsum.photos/seed/1234/240/320">
                             <h3>本页面不支持在移动端查看</h3>
                         </n-grid-item>
-                        <n-grid-item span="6 m:0 l:0">
+                        <n-grid-item span="6 m:0 l:0" style="margin-left: 10px; margin-right: 10px; ">
                             <img class="normal-img" src="https://picsum.photos/seed/5678/240/320">
                             <h3>本页面不支持在移动端查看</h3>
                         </n-grid-item>
-                        <n-grid-item span="0 m:3 l:3">
+                        <n-grid-item span="0 m:3 l:3" style="margin-left: 10px; margin-right: 10px; ">
                             <n-card title="" size="medium"
                                 style="margin: auto; display: flex; max-width: fit-content; max-height: 580px;"
                                 hoverable>
                                     <n-carousel direction="vertical" dot-type="line" dot-placement="left"
                                         trigger="hover" show-arrow autoplay draggable mousewheel
                                         style="max-height: 540px;" >
-                                        <img class="carousel-img" src="https://picsum.photos/seed/1/960/540">
-                                        <img class="carousel-img" src="https://picsum.photos/seed/2/960/540">
-                                        <img class="carousel-img" src="https://picsum.photos/seed/3/960/540">
-                                        <img class="carousel-img" src="https://picsum.photos/seed/4/960/540">
+                                        <img class="carousel-img" src="https://sipeed.com/static/images/banner-1.jpg">
+                                        <img class="carousel-img" src="https://sipeed.com/static/images/banner-2.jpg">
+                                        <img class="carousel-img" src="https://sipeed.com/static/images/banner-3.jpg">
+                                        <img class="carousel-img" src="https://sipeed.com/static/images/banner-4.jpg">
                                     </n-carousel>
                             </n-card>
                         </n-grid-item>
-                        <n-grid-item span="0 m:3 l:3">
+                        <n-grid-item span="0 m:3 l:3" style="margin-left: 10px; margin-right: 10px;">
                             <n-card title="" size="huge" style="margin: auto; display: flex; height: 580px;"
                                 hoverable>
-                                <n-tabs type="line" size="large" :tabs-padding="20" pane-style="padding: 20px;">
+                                <n-tabs type="line" size="large">
                                     <n-tab-pane name="2022年07月21日">
-                                        <img src="https://picsum.photos/seed/test/320/240">
+                                        <n-layout class="head_background" style="height: 450px; position: relative" has-sider position="absolute" hoverable>
+                                            <n-card style="margin: auto; display: fit-content; max-height: fit-content;">
+                                                <n-ellipsis expand-trigger="click" line-clamp="1" :tooltip="false">
+                                                    <n-divider title-placement="left">
+                                                        <h1>初见 Primer 20K Lite 不如上手点个灯！</h1>
+                                                    </n-divider>
+                                                    Tang Primer 20K 是基于 GW2A-V18PG256C8IC8I7 所设计的一款 DDR3 sodimm 封装的开发板。
+                                                    作为 Sipeed 所发售的第六款 FPGA 产品。
+                                                    得益于 GW2A 丰富的资源，Tang Primer 20K 可以满足多种项目需求；例如当下最火的“IC设计”，可以使用高云所提供的 Gowin_EMPU_M1、PicoRV32两款软核来体验一下 mcu 软核，或者也可以用来验证自己所设计的软核。
+                                                </n-ellipsis>
+                                                <div>
+                                                    <img class="card-img" src="/news/others/20k_lite_start/assets/cover.png">
+                                                </div>
+                                                <n-divider>
+                                                    <h2>这灯说点就点！</h2>
+                                                </n-divider>
+                                                <div>
+                                                    <img class="card-img" src="/news/others/20k_lite_start/assets/result.gif">
+                                                </div>
+                                                <n-divider title-placement="right">
+                                                    <n-button-group>
+                                                        <n-button ghost>
+                                                            <cash-icon />
+                                                            买买买！
+                                                        </n-button>
+                                                        <n-button round>
+                                                            阅读更多
+                                                        </n-button>
+                                                    </n-button-group>
+                                                </n-divider>
+                                            </n-card>
+                                        </n-layout>
                                     </n-tab-pane>
                                     <n-tab-pane name="2022年06月25日">
                                         2022年06月25日
@@ -804,29 +835,29 @@
             </n-tab-pane>
 
             <n-tab-pane name="chap3" tab="关于我们">
-                <n-card class="tail_background" style="padding: 10px;">
+                <n-card class="tail_background">
                     <n-grid cols="3" item-responsive responsive="screen">
-                        <n-grid-item span="3 m:1 l:1" style="padding: 10px;">
+                        <n-grid-item span="3 m:1 l:1" style="margin: 5px;">
                             <div>
-                                <n-card title="构建社区生态" size="small"
+                                <n-card title="构建软件生态" size="small"
                                     style="margin: auto; display: flex; max-width: fit-content; max-height: 580px;"
                                     hoverable>
                                     <img class="normal-img" src="https://ts1.cn.mm.bing.net/th/id/R-C.a4c7594450e12d747064ebbd53a99c46?rik=OxRyupwdy96rlw&riu=http%3a%2f%2fwww.0easy.com%2fuploads%2fallimg%2f190823%2f1-1ZR3155010445.jpg&ehk=Jw6QdN7xohD0fC9IBd1mD7u%2fNpAM8xdJMiOth%2frYatg%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1">
                                 </n-card>
                             </div>
                         </n-grid-item>
-                        <n-grid-item span="3 m:1 l:1" style="padding: 10px;">
+                        <n-grid-item span="3 m:1 l:1" style="margin: 5px;">
                             <div>
-                                <n-card title="交流前沿技术" size="small"
+                                <n-card title="交流开源技术" size="small"
                                     style="margin: auto; display: flex; max-width: fit-content; max-height: 580px;"
                                     hoverable>
                                     <img class="normal-img" src="https://ts1.cn.mm.bing.net/th/id/R-C.41c59cb20350f4ddea6e445d904d237e?rik=EKFNj5LjGCC4mw&riu=http%3a%2f%2fwww.0easy.com%2fuploads%2fallimg%2f191022%2f1-19102213561D45.png&ehk=47qnsgL8PAjoRIRvgBMknWovL7rltBvj9bJ9DqxUg0g%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1">
                                 </n-card>
                             </div>
                         </n-grid-item>
-                        <n-grid-item span="3 m:1 l:1" style="padding: 10px;">
+                        <n-grid-item span="3 m:1 l:1" style="margin: 5px;">
                             <div>
-                                <n-card title="推动开源发展" size="small"
+                                <n-card title="推动行业发展" size="small"
                                     style="margin: auto; display: flex; max-width: fit-content; max-height: 580px;"
                                     hoverable>
                                     <!-- <img class="normal-img" src="https://picsum.photos/seed/3333/640/480"> -->
@@ -1430,9 +1461,16 @@
         background: rgba(128, 128, 128, 0.4);
     }
 
+    .card-img {
+        object-fit: cover;
+        height: 240px;
+        max-width: fit-content;
+    }
+
     .carousel-img {
         object-fit: cover;
-        height: fit-content;
+        height: 540px;
+        max-width: fit-content;
     }
 
     .normal-img {
