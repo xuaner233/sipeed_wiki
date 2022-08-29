@@ -1,6 +1,6 @@
-<!-- 
+<!--
     Sipeed Wiki 官方首页，包含了各种产品介绍和文档
-    首页修改指南： 
+    首页修改指南：
         添加或修改产品卡片只需要修改 products 变量
         修改或这添加翻译，只需要修改 messages 变量
         保存此文件后如果需要立刻看到使用了这个模板的文件的效果，可以打开那个文件保存一次就会触发 teedoc 构建,
@@ -12,87 +12,1065 @@
 
 {% block content %}
 
-<script src="/static/js/vue.js"></script>
+<!-- <script src="https://unpkg.com/vue"></script> -->
+<!-- <script src="https://unpkg.com/naive-ui"></script> -->
+
+<script src="/static/js/vue.global.prod.js"></script>
+<script src="/static/js/naive-ui.prod.js"></script>
+<!-- <script src="/static/js/vue.js"></script> -->
 <script src="/static/js/vue_i18n.js"></script>
 
 <div id="products">
-    <h1>{[ $t("Sipeed Wiki") ]}</h1>
-    <ul>
-        <li v-for="product in products" v-bind:style="{ backgroundColor: product.bg }">
-            <div class="video_wrapper" v-if="product.video">
-                <video class="video_player" v-bind:src="product.video" v-bind:poster="product.img" preload muted autoplay loop="-1" x5-playsinline="" x5-video-player-fullscreen="true" playsinline="" webkit-playsinline="" x5-video-player-type="h5" >
-                    Your brower not support video play!
-                </video>
-                <div class="play_mask" v-on:click="playVideo"></div>
-            </div>
-            <img v-else v-bind:src="product.img">
-            <div class="product_info">
-                <div class="product_head">
-                    <div class="product_head_content">
-                        <h2>{[ $t(product.title) ]}</h2>
-                        <div>
-                            {[ $t(product.brief) ]}
+    <n-card style="padding-left: 4%; padding-right: 4%;">
+        <n-tabs default-value="chap2" type="segment" size="large" animated style="margin: 0 -4px"
+            pane-style="padding-left: 4px; padding-right: 4px; box-sizing: border-box;">
+            <n-tab-pane name="chap1" tab="产品中心">
+                <n-tabs default-value="oasis" type="card"
+                    tab-style="justify-content:center; display: flex; padding-left: 15px; padding-right: 15px; text-align: center; margin: 0 auto; font-size: 20px; "
+                    class="custom-tabs">
+                    <n-tab-pane name="oasis" tab="Maix-I">
+                        <n-layout has-sider position="absolute" style="height: 700px; position: relative"
+                            class="head_background" hoverable>
+                            <n-grid cols="4" item-responsive responsive="screen">
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="边缘 AI MicroPython 开发环境" size="small" hoverable>
+                                        <img class="normal-img" src="/static/home/maixpy.jpeg">
+                                        <n-button-group style="margin: 5px; font-size: 20px;">
+                                            <n-button tag="a" href="https://github.com/sipeed/maixpy" target="_blank"
+                                                round>
+                                                源码仓库
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://wiki.sipeed.com/maixpy" target="_blank"
+                                                round>
+                                                使用文档
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="边缘 AI Linux Python3 开发环境" size="small" hoverable>
+                                        <img class="normal-img" src="/static/home/maixpy3.jpeg">
+                                        <n-button-group style="margin: 5px; font-size: 18px;">
+                                            <n-button tag="a" href="https://github.com/sipeed/maixpy3" target="_blank"
+                                                round>
+                                                源码仓库
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://wiki.sipeed.com/maixpy3" target="_blank"
+                                                round>
+                                                使用文档
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="小巧玲珑的视觉魔方" size="small" hoverable>
+                                        <img class="normal-img"
+                                            src="https://img.alicdn.com/bao/uploaded/i3/2200606237318/O1CN01eb9ob023vhA51aLaE_!!2200606237318.jpg_240x240.jpg">
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                            </n-grid>
+                        </n-layout>
+                    </n-tab-pane>
+                    <n-tab-pane name="the beatles" tab="Maix-II & III">
+                        <n-layout has-sider position="absolute" style="height: 720p x; position: relative"
+                            class="head_background" hoverable>
+                            <n-grid cols="4" item-responsive responsive="screen">
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/111/320/240">
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/222/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/333/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/666/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/777/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                            </n-grid>
+                        </n-layout>
+                    </n-tab-pane>
+                    <n-tab-pane name="jay chou" tab="LicheePi">
+                        <n-layout has-sider position="absolute" style="height: 700p x; position: relative"
+                            class="head_background" hoverable>
+                            <n-grid cols="4" item-responsive responsive="screen">
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/111/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/222/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/333/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/444/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/555/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/666/320/240">
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                            </n-grid>
+                        </n-layout>
+                    </n-tab-pane>
+                    <n-tab-pane name="jay zhou" tab="FPGA">
+                        <n-layout has-sider position="absolute" style="height: 700px; position: relative"
+                            class="head_background" hoverable>
+                            <n-grid cols="4" item-responsive responsive="screen">
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/111/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/444/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/888/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/999/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                            </n-grid>
+                        </n-layout>
+                    </n-tab-pane>
+                    <n-tab-pane name="chou" tab="MetaSense">
+                        <n-layout has-sider position="absolute" style="height: 700px; position: relative"
+                            class="head_background" hoverable>
+                            <n-grid cols="4" item-responsive responsive="screen">
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/111/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/222/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/333/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/444/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/555/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/666/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/777/320/240">
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/888/320/240">
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/999/320/240">
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                            </n-grid>
+                        </n-layout>
+                    </n-tab-pane>
+                    <n-tab-pane name="zhou" tab="Maix-Zero">
+                        <n-layout has-sider position="absolute" style="height: 700px; position: relative"
+                            class="head_background" hoverable>
+                            <n-grid cols="4" item-responsive responsive="screen">
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/444/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/555/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/666/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/777/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/888/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/999/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                            </n-grid>
+                        </n-layout>
+                    </n-tab-pane>
+                    <n-tab-pane name="zhou1" tab="MaixFace">
+                        <n-layout has-sider position="absolute" style="height: 700px; position: relative"
+                            class="head_background" hoverable>
+                            <n-grid cols="4" item-responsive responsive="screen">
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/444/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/555/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/666/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/777/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/888/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/999/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                            </n-grid>
+                        </n-layout>
+                    </n-tab-pane>
+                    <n-tab-pane name="zhou2" tab="外设&配件">
+                        <n-layout has-sider position="absolute" style="height: 700px; position: relative"
+                            class="head_background" hoverable>
+                            <n-grid cols="4" item-responsive responsive="screen">
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/777/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/888/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/999/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                            </n-grid>
+                        </n-layout>
+                    </n-tab-pane>
+                    <n-tab-pane name="zhou3" tab="商用&模组">
+                        <n-layout has-sider position="absolute" style="height: 700px; position: relative"
+                            class="head_background" hoverable>
+                            <n-grid cols="4" item-responsive responsive="screen">
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/777/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/888/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/999/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                            </n-grid>
+                        </n-layout>
+                    </n-tab-pane>
+                    <n-tab-pane name="zhou5" tab="停产系列">
+                        <n-layout has-sider position="absolute" style="height: 700px; position: relative"
+                            class="head_background" hoverable>
+                            <n-grid cols="4" item-responsive responsive="screen">
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/777/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/888/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                                <n-grid-item span="4 s:2 m:2 l:1" style="padding: 10px;">
+                                    <n-card title="某某产品" size="small" hoverable>
+                                        <img class="normal-img" src="https://picsum.photos/seed/999/320/240">
+
+
+                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                            <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                了解更多？
+                                            </n-button>
+                                            <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                想要这个！
+                                            </n-button>
+                                        </n-button-group>
+                                    </n-card>
+                                </n-grid-item>
+                            </n-grid>
+                        </n-layout>
+                    </n-tab-pane>
+                </n-tabs>
+            </n-tab-pane>
+            <n-tab-pane name="chap2" tab="最新动态">
+                <n-card class="news_background" hoverable>
+                    <n-grid cols="4" item-responsive responsive="screen">
+                        <n-grid-item span="4 s:0 m:0 l:0">
+                            <n-card title="桌面版有更多内容喔！" size="huge" style="margin-bottom: 20px;">
+                            </n-card>
+                            <n-card title="构建软件生态" size="small"
+                                style="margin-bottom: 20px; display: flex; max-width: fit-content; max-height: 580px;"
+                                hoverable>
+                                <img class="mobile-img"
+                                    src="https://ts1.cn.mm.bing.net/th/id/R-C.a4c7594450e12d747064ebbd53a99c46?rik=OxRyupwdy96rlw&riu=http%3a%2f%2fwww.0easy.com%2fuploads%2fallimg%2f190823%2f1-1ZR3155010445.jpg&ehk=Jw6QdN7xohD0fC9IBd1mD7u%2fNpAM8xdJMiOth%2frYatg%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1">
+                            </n-card>
+                            <n-card title="交流开源技术" size="small"
+                                style="margin-bottom: 20px; display: flex; max-width: fit-content; max-height: 580px;"
+                                hoverable>
+                                <img class="mobile-img"
+                                    src="https://ts1.cn.mm.bing.net/th/id/R-C.41c59cb20350f4ddea6e445d904d237e?rik=EKFNj5LjGCC4mw&riu=http%3a%2f%2fwww.0easy.com%2fuploads%2fallimg%2f191022%2f1-19102213561D45.png&ehk=47qnsgL8PAjoRIRvgBMknWovL7rltBvj9bJ9DqxUg0g%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1">
+                            </n-card>
+                            <n-card title="推动行业发展" size="small"
+                                style="margin-bottom: 20px; display: flex; max-width: fit-content; max-height: 580px;"
+                                hoverable>
+                                <img class="mobile-img"
+                                    src="https://pic2.zhimg.com/v2-6111e87b41762219d87feacbd5e27158_1440w.jpg?source=172ae18b">
+                            </n-card>
+                        </n-grid-item>
+                        <n-grid-item span="0 s:4 m:4 l:4" style="margin-left: 1%; margin-right: 1%;">
+                            <n-card size="small" style="margin: auto; display: flex; height: 720px; " hoverable>
+                                <n-tabs type="line" trigger='hover'>
+                                    <n-tab-pane name="近期热点">
+                                        <n-card style="margin: auto; display: fit-content; max-height: fit-content;">
+                                            <n-carousel effect="card" class="base_background"
+                                                prev-slide-style="transform: translateX(-150%) translateZ(-1200px);"
+                                                next-slide-style="transform: translateX(50%) translateZ(-1200px);"
+                                                :show-dots="false" autoplay draggable style="height: 600px">
+                                                <n-carousel-item :style="{ width: '80%' }">
+                                                    <n-card size="small" hoverable>
+                                                        <img class="carousel-img" src="/static/home/banner-1.jpg">
+                                                    </n-card>
+                                                </n-carousel-item>
+                                                <n-carousel-item :style="{ width: '80%' }">
+                                                    <n-card size="small" hoverable>
+                                                        <img class="carousel-img" src="/static/home/banner-2.jpg">
+                                                        <n-divider title-placement="right">
+                                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                                <n-button size="large"
+                                                                    href="https://item.taobao.com/item.htm?spm=a1z10.1-c-s.w4004-24053782153.3.3d3252b1jsMNM4&id=680099020807"
+                                                                    target="_blank" tag="a" type="error" ghost>
+                                                                    产品使用手册
+                                                                </n-button>
+                                                                <n-button size="large"
+                                                                    style="color:#ffffff; " color="#e34548"
+                                                                    href="/news/others/20k_lite_start/20k_lite_start.html"
+                                                                    tag="a" target="_blank" round>
+                                                                    预售价：￥199.00
+                                                                </n-button>
+                                                            </n-button-group>
+                                                        </n-divider>
+                                                    </n-card>
+                                                </n-carousel-item>
+                                                <n-carousel-item :style="{ width: '80%' }">
+                                                    <n-card size="small" hoverable>
+                                                        <img class="carousel-img" src="/static/home/banner-3.jpg">
+                                                    </n-card>
+                                                </n-carousel-item>
+                                                <n-carousel-item :style="{ width: '80%' }">
+                                                    <n-card size="small" hoverable>
+                                                        <img class="carousel-img" src="/static/home/banner-4.jpg">
+                                                    </n-card>
+                                                </n-carousel-item>
+                                            </n-carousel>
+                                        </n-card>
+                                    </n-tab-pane>
+                                    <n-tab-pane name="Primer 20K Lite 上新">
+                                        <n-layout style="position: relative" has-sider position="absolute" hoverable>
+                                            <n-card class="base_background"
+                                                style="margin: auto; display: fit-content; max-height: 600px;">
+                                                <h1>初见 Primer 20K Lite 之点灯奥义</h1>
+                                                <n-divider title-placement="left">
+                                                    <n-rate size="large" readonly :default-value="3" />
+                                                </n-divider>
+                                                <n-ellipsis expand-trigger="click" line-clamp="1" :tooltip="false">
+                                                    Tang Primer 20K 是基于 GW2A-V18PG256C8IC8I7 所设计的一款 DDR3 sodimm
+                                                    封装的核心板，额外准备了两个底板，分别为 Dock 底板和 Lite 底板。作为 Sipeed 所发售的第六款 FPGA 产品，Tang
+                                                    Primer 20K 一直广受关注。<br>
+                                                    得益于 GW2A 丰富的资源，Tang Primer 20K 可以满足多种项目需求；例如当下最火的“IC设计”，可以使用高云所提供的
+                                                    Gowin_EMPU_M1、PicoRV32两款软核来体验一下 mcu 软核，或者也可以用来验证自己所设计的软核。<br>
+                                                </n-ellipsis>
+                                                <div>
+                                                    <img class="card-img"
+                                                        src="https://gd1.alicdn.com/imgextra/i3/2200606237318/O1CN01Xe11pH23vhBRw4zLG_!!2200606237318.jpg_400x400.jpg">
+                                                    <img class="card-img"
+                                                        src="/news/others/20k_lite_start/assets/result.gif">
+                                                </div>
+                                                <n-divider title-placement="right">
+                                                    <n-button-group>
+                                                        <n-button-group style="margin: 5px; font-size: 16px;">
+                                                            <n-button size="large"
+                                                                href="https://item.taobao.com/item.htm?spm=a1z10.1-c-s.w4004-24053782153.3.3d3252b1jsMNM4&id=680099020807"
+                                                                target="_blank" tag="a" type="error" ghost>
+                                                                活动价：￥199.00
+                                                            </n-button>
+                                                            <n-button size="large" style="color:#ffffff;" color="#e34548"
+                                                                href="/news/others/20k_lite_start/20k_lite_start.html"
+                                                                tag="a" target="_blank" round>
+                                                                阅读更多
+                                                            </n-button>
+                                                        </n-button-group>
+                                                    </n-button-group>
+                                                </n-divider>
+                                            </n-card>
+                                        </n-layout>
+                                    </n-tab-pane>
+                                    <n-tab-pane name="MetaSense 系列登场">
+                                        本次新品我们带来了两款
+                                    </n-tab-pane>
+                                    <n-tab-pane name="2022年05月26日">
+                                        2022年05月26日
+                                    </n-tab-pane>
+                                    <n-tab-pane name="2022年04月26日">
+                                        2022年04月26日
+                                    </n-tab-pane>
+                                    <n-tab-pane name="2022年03月26日">
+                                        2022年03月26日
+                                    </n-tab-pane>
+                                    <n-tab-pane name="2022年02月26日">
+                                        2022年02月26日
+                                    </n-tab-pane>
+                                    <n-tab-pane name="2022年01月26日">
+                                        2022年01月26日
+                                    </n-tab-pane>
+                                    <n-tab-pane name="2022年01月25日">
+                                        2022年01月26日
+                                    </n-tab-pane>
+                                    <n-tab-pane name="2022年01月24日">
+                                        2022年01月26日
+                                    </n-tab-pane>
+                                    <n-tab-pane name="2022年01月23日">
+                                        2022年01月26日
+                                    </n-tab-pane>
+                                    <n-tab-pane name="2022年01月22日">
+                                        2022年01月26日
+                                    </n-tab-pane>
+                                    <n-tab-pane name="2022年01月21日">
+                                        2022年01月26日
+                                    </n-tab-pane>
+                                    <n-tab-pane name="2022年01月20日">
+                                        2022年01月26日
+                                    </n-tab-pane>
+                                </n-tabs>
+
+                            </n-card>
+                        </n-grid-item>
+                    </n-grid>
+                </n-card>
+            </n-tab-pane>
+        </n-tabs>
+    </n-card>
+
+    <template>
+        <ul>
+            <li v-for="product in datas['products']" v-bind:style="{ backgroundColor: product.bg }">
+                <div class="video_wrapper" v-if="product.video">
+                    <video class="video_player" v-bind:src="product.video" v-bind:poster="product.img" preload muted
+                        autoplay loop="-1" x5-playsinline="" x5-video-player-fullscreen="true" playsinline=""
+                        webkit-playsinline="" x5-video-player-type="h5">
+                        Your brower not support video play!
+                    </video>
+                    <div class="play_mask" v-on:click="playVideo"></div>
+                </div>
+                <img v-else v-bind:src="product.img">
+                <div class="product_info">
+                    <div class="product_head">
+                        <div class="product_head_content">
+                            <h2>{[ $t(product.title) ]}</h2>
+                            <div>
+                                {[ $t(product.brief) ]}
+                            </div>
                         </div>
                     </div>
+                    <div class="product_body" v-if="product.left && product.right">
+                        <ul class="left">
+                            <li class="left_lable category" v-if="product.left_label">
+                                <h3>{[ $t(product.left_label) ]}</h3>
+                            </li>
+                            <li class="info_item" v-for="left in product.left">
+                                <a v-bind:href="$t(left.url)" v-new-tab="left.new_tab">
+                                    <h3 class="title" v-html="$t(left.name)"></h3>
+                                    <span class="brief" v-html="$t(left.brief)"></span>
+                                </a>
+                                <span v-if="typeof(left.new)=='string' && left.new != ''" class="new_with_info"
+                                    v-on:click="newInfo"><span class="new_info">{[
+                                        left.new ]}</span></span>
+                                <span v-else-if="left.new" class="new"></span>
+                            </li>
+                        </ul>
+                        <ul class="right">
+                            <li class="right_lable category" v-if="product.right_label">
+                                <h3>{[ $t(product.right_label) ]}</h3>
+                            </li>
+                            <li class="info_item" v-for="right in product.right">
+                                <a v-bind:href="$t(right.url)" v-new-tab="right.new_tab">
+                                    <h3 class="title" v-html="$t(right.name)"></h3>
+                                    <div class="brief" v-html="$t(right.brief)"></div>
+                                </a>
+                                <span v-if="typeof(right.new)=='string' && right.new != ''" class="new_with_info"
+                                    v-on:click="newInfo"><span class="new_info">{[
+                                        right.new ]}</span></span>
+                                <span v-else-if="right.new" class="new"></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div v-else class="product_body product_body_single">
+                        <ul v-if="product.left" class="left">
+                            <li class="left_lable category" v-if="product.left_label">
+                                <h3>{[ $t(product.left_label) ]}</h3>
+                            </li>
+                            <li class="info_item" v-for="left in product.left">
+                                <a v-bind:href="$t(left.url)" v-new-tab="left.new_tab">
+                                    <h3 class="title" v-html="$t(left.name)"></h3>
+                                    <span class="brief" v-html="$t(left.brief)"></span>
+                                </a>
+                                <span v-if="typeof(left.new)=='string' && left.new != ''" class="new_with_info"
+                                    v-on:click="newInfo"><span class="new_info">{[
+                                        left.new ]}</span></span>
+                                <span v-else-if="left.new" class="new"></span>
+                            </li>
+                        </ul>
+                        <ul v-if="product.right" class="right">
+                            <li class="right_lable category" v-if="product.right_label">
+                                <h3>{[ $t(product.right_label) ]}</h3>
+                            </li>
+                            <li class="info_item" v-for="right in product.right">
+                                <a v-bind:href="$t(right.url)" v-new-tab="right.new_tab">
+                                    <h3 class="title" v-html="$t(right.name)"></h3>
+                                    <span class="brief" v-html="$t(right.brief)"></span>
+                                </a>
+                                <span v-if="typeof(right.new)=='string' && right.new != ''" class="new_with_info"
+                                    v-on:click="newInfo"><span class="new_info">{[
+                                        right.new ]}</span></span>
+                                <span v-else-if="right.new" class="new"></span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="product_body" v-if="product.left && product.right">
-                    <ul class="left">
-                        <li class="left_lable category" v-if="product.left_label"><h3>{[ $t(product.left_label) ]}</h3></li>
-                        <li class="info_item" v-for="left in product.left">
-                            <a v-bind:href="$t(left.url)" v-new-tab="left.new_tab">
-                                <h3 class="title" v-html="$t(left.name)"></h3>
-                                <span class="brief" v-html="$t(left.brief)"></span>
-                            </a>
-                            <span v-if="typeof(left.new)=='string' && left.new != ''" class="new_with_info" v-on:click="newInfo"><span class="new_info">{[ left.new ]}</span></span>
-                            <span v-else-if="left.new" class="new"></span>
-                        </li>
-                    </ul>
-                    <ul class="right">
-                        <li class="right_lable category" v-if="product.right_label"><h3>{[ $t(product.right_label) ]}</h3></li>
-                        <li class="info_item" v-for="right in product.right">
-                            <a v-bind:href="$t(right.url)" v-new-tab="right.new_tab">
-                                <h3 class="title" v-html="$t(right.name)"></h3>
-                                <div class="brief" v-html="$t(right.brief)"></div>
-                            </a>
-                            <span v-if="typeof(right.new)=='string' && right.new != ''" class="new_with_info" v-on:click="newInfo"><span class="new_info">{[ right.new ]}</span></span>
-                            <span v-else-if="right.new" class="new"></span>
-                        </li>
-                    </ul>
-                </div>
-                <div v-else class="product_body product_body_single">
-                    <ul v-if="product.left" class="left">
-                        <li class="left_lable category" v-if="product.left_label"><h3>{[ $t(product.left_label) ]}</h3></li>
-                        <li class="info_item" v-for="left in product.left">
-                            <a v-bind:href="$t(left.url)" v-new-tab="left.new_tab">
-                                <h3 class="title" v-html="$t(left.name)"></h3>
-                                <span class="brief" v-html="$t(left.brief)"></span>
-                            </a>
-                            <span v-if="typeof(left.new)=='string' && left.new != ''" class="new_with_info" v-on:click="newInfo"><span class="new_info">{[ left.new ]}</span></span>
-                            <span v-else-if="left.new" class="new"></span>
-                        </li>
-                    </ul>
-                    <ul v-if="product.right" class="right">
-                        <li class="right_lable category" v-if="product.right_label"><h3>{[ $t(product.right_label) ]}</h3></li>
-                        <li class="info_item" v-for="right in product.right">
-                            <a v-bind:href="$t(right.url)" v-new-tab="right.new_tab">
-                                <h3 class="title" v-html="$t(right.name)"></h3>
-                                <span class="brief" v-html="$t(right.brief)"></span>
-                            </a>
-                            <span v-if="typeof(right.new)=='string' && right.new != ''" class="new_with_info" v-on:click="newInfo"><span class="new_info">{[ right.new ]}</span></span>
-                            <span v-else-if="right.new" class="new"></span>
-                        </li>
-                    </ul>
-                </div>
+            </li>
+        </ul>
+
+        <div id="msg">
+            <div id="msg_mask" v-on:click="msgCLose"></div>
+            <div id="msg_close" v-on:click="msgCLose">x</div>
+            <div id="msg_content_wrapper">
+                <div id="msg_content"></div>
             </div>
-        </li>
-    </ul>
-    <div id="msg">
-        <div id="msg_mask" v-on:click="msgCLose"></div>
-        <div id="msg_close" v-on:click="msgCLose">x</div>
-        <div id="msg_content_wrapper">
-            <div id="msg_content"></div>
         </div>
-    </div>
+    </template>
+
 </div>
 <script>
     var pageLanguages = ["en", "zh"] // languages user can select in pages
@@ -271,15 +1249,16 @@
     }
     ///////////////////// translate end /////////////////////
     ///////////////////// config start /////////////////////
-    const products = [{
-        title: "maix_title",
-        brief: "maix_brief",
-        img: "",
-        video: "/hardware/zh/maixII/M2A/MaixSense/assets/M2A-1.mp4",
-        bg: "#dbdbdb",
-        left_label: "Hardware",
-        right_label: "Software",
-        left: [{
+    const datas = {
+        'products': [{
+            title: "maix_title",
+            brief: "maix_brief",
+            img: "",
+            video: "/hardware/zh/maixII/M2A/MaixSense/assets/M2A-1.mp4",
+            bg: "#dbdbdb",
+            left_label: "Hardware",
+            right_label: "Software",
+            left: [{
                 name: "Maix-I",
                 url: "maix_i_url",
                 brief: "maix_i_brief"
@@ -296,17 +1275,17 @@
                 brief: "maix_iii_brief",
                 new: true
             }
-        ],
-        right: [{
+            ],
+            right: [{
                 name: "MaixPy",
                 url: "maixpy_url",
                 brief: "maixpy_brief"
-            },{
+            }, {
                 name: "MaixPy3",
                 url: "maixpy3_url",
                 brief: "maixpy3_brief",
                 new: true
-            },{
+            }, {
                 name: "TinyMaix",
                 url: "https://github.com/sipeed/TinyMaix",
                 brief: "tinymaix_brief",
@@ -318,143 +1297,144 @@
                 url: "https://github.com/sipeed/libmaix",
                 brief: "libmaix_brief",
                 new_tab: true
-            },{
+            }, {
                 name: "Maix-Speech",
                 url: "https://github.com/sipeed/Maix-Speech",
                 brief: "maixpy_speech_brief",
                 new_tab: true
             }
-        ]
-        },{
-        title: "maixhub_title",
-        brief: "maixhub_brief",
-        img: "/soft/maixpy3/zh/assets/images/main.png",
-        bg: "white",
-        left: [{
+            ]
+        }, {
+            title: "maixhub_title",
+            brief: "maixhub_brief",
+            img: "/soft/maixpy3/zh/assets/images/main.png",
+            bg: "white",
+            left: [{
                 name: "maixhub_models",
                 url: "https://maixhub.com/model/zoo",
                 brief: "maixhub_models_brief",
                 new_tab: true,
                 new: true
-            },{
+            }, {
                 name: "maixhub_train",
                 url: "https://maixhub.com/",
                 brief: "maixhub_train_brief",
                 new_tab: true,
                 new: true
-            },{
+            }, {
                 name: "maixhub_convert",
                 url: "https://maixhub.com/",
                 brief: "maixhub_convert_brief",
                 new_tab: true
             }
-        ]
-        },{
-        title: "licheepi_title",
-        brief: "licheepi_brief",
-        img: "/static/image/licheeRV_dock.jpg",
-        bg: "#f5fbfb",
-        left: [{
+            ]
+        }, {
+            title: "licheepi_title",
+            brief: "licheepi_brief",
+            img: "/static/image/licheeRV_dock.jpg",
+            bg: "#f5fbfb",
+            left: [{
                 name: "lichee_zero",
                 url: "lichee_zero_url",
                 brief: "lichee_zero_brief"
-            },{
+            }, {
                 name: "lichee_nano",
                 url: "lichee_nano_url",
                 brief: "lichee_nano_brief"
-            },{
+            }, {
                 name: "lichee_rv",
                 url: "lichee_rv_url",
                 brief: "lichee_rv_brief",
                 new: true
             },
-        ]
-        },{
-        title: "tang_title",
-        brief: "tang_brief",
-        img: "/static/image/tang.jpg",
-        bg: "#fafafa",
-        left: [{
+            ]
+        }, {
+            title: "tang_title",
+            brief: "tang_brief",
+            img: "/static/image/tang.jpg",
+            bg: "#fafafa",
+            left: [{
                 name: "tang_premier",
                 url: "tang_premier_url",
                 brief: "tang_premier_brief"
-            },{
+            }, {
                 name: "tang_nano",
                 url: "tang_nano_url",
                 brief: "tang_nano_brief"
-            },{
+            }, {
                 name: "tang_nano_4k",
                 url: "tang_nano_4k_url",
                 brief: "tang_nano_4k_brief",
                 new: true
-            },{
+            }, {
                 name: "tang_nano_9k",
                 url: "tang_nano_9k_url",
                 brief: "tang_nano_9k_brief",
                 new: true
             }
-        ]
-        },{
-        title: "longan_title",
-        brief: "longan_brief",
-        img: "/static/image/longan.jpg",
-        left: [{
+            ]
+        }, {
+            title: "longan_title",
+            brief: "longan_brief",
+            img: "/static/image/longan.jpg",
+            left: [{
                 name: "longan_nano",
                 url: "longan_nano_url",
                 brief: "longan_nano_brief"
             }
-        ]
-        },{
-        title: "module_title",
-        brief: "module_brief",
-        img: "/static/image/spmod.jpg",
-        left: [{
+            ]
+        }, {
+            title: "module_title",
+            brief: "module_brief",
+            img: "/static/image/spmod.jpg",
+            left: [{
                 name: "module_spmod",
                 url: "module_spmod_url",
                 brief: "module_spmod_brief"
-            },{
+            }, {
                 name: "module_debuger",
                 url: "module_debuger_url",
                 brief: "module_debuger_brief"
             },
-        ]
-        },{
-        title: "community_title",
-        brief: "community_brief",
-        img: "/static/image/community.jpg",
-        left: [{
+            ]
+        }, {
+            title: "community_title",
+            brief: "community_brief",
+            img: "/static/image/community.jpg",
+            left: [{
                 name: "community_github",
                 url: "https://github.com/sipeed",
                 brief: "community_github_brief"
-            },{
+            }, {
                 name: "community_bbs",
                 url: "https://bbs.sipeed.com",
                 brief: "community_bbs_brief"
-            },{
+            }, {
                 name: "community_twitter",
                 url: "https://twitter.com/SipeedIO",
                 brief: "community_twitter_brief"
-            },{
+            }, {
                 name: "community_more",
                 url: "/community.html",
                 brief: "community_more_brief"
             }
-        ]
-        }
-    ]
+            ]
+        }]
+    }
     ///////////////////// config end /////////////////////
 
     // get page locale
     var locale = document.getElementsByTagName("html")[0].lang
-    if (locale){
+    if (locale) {
         locale = locale.toLowerCase().split("-")[0]
     }
     // get browser locale
-    var localeBrowser =(navigator.language || navigator.browserLanguage).toLowerCase().split("-")[0];
+    var localeBrowser = (navigator.language || navigator.browserLanguage).toLowerCase().split("-")[0];
     // brower locale not in page lanuage list, use browser locale
-    if (!localeBrowser in pageLanguages){
+    if (!localeBrowser in pageLanguages) {
         locale = localeBrowser
     }
+
     const i18n = VueI18n.createI18n({
         locale: locale,
         messages: messages,
@@ -462,31 +1442,31 @@
         silentFallbackWarn: true
     })
 
-    function isLimitedNetwork(){
+    function isLimitedNetwork() {
         var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection || { tyep: 'unknown' };
         const notLimitTypes = ["ethernet", "wifi", "wimax"]
         const limitTypes = ["bluetooth", "cellular"]
 
-        var system = { 
-            win: false, 
-            mac: false, 
-            x11: false, 
-            ipad:false 
-        }; 
+        var system = {
+            win: false,
+            mac: false,
+            x11: false,
+            ipad: false
+        };
         var p = navigator.platform;
-        system.win = p.indexOf("Win") == 0; 
-        system.mac = p.indexOf("Mac") == 0; 
-        system.x11 = (p == "X11") || (p.indexOf("Linux") == 0); 
-        system.ipad = (navigator.userAgent.match(/iPad/i) != null)?true:false; 
-        if(notLimitTypes.indexOf(connection.type) >= 0){
+        system.win = p.indexOf("Win") == 0;
+        system.mac = p.indexOf("Mac") == 0;
+        system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+        system.ipad = (navigator.userAgent.match(/iPad/i) != null) ? true : false;
+        if (notLimitTypes.indexOf(connection.type) >= 0) {
             return false
         }
-        if((system.win || system.mac || system.x11 || system.ipad ) && (limitTypes.indexOf(connection.type)<0) ) {
+        if ((system.win || system.mac || system.x11 || system.ipad) && (limitTypes.indexOf(connection.type) < 0)) {
             return false
         }
         return true
     }
-    function showNew(info){
+    function showNew(info) {
         var el = document.getElementById("msg_content")
         el.innerHTML = info
         el = document.getElementById("msg")
@@ -494,11 +1474,11 @@
     }
     const allHandling = {
         compilerOptions: {
-            delimiters:['{[', ']}'],
+            delimiters: ['{[', ']}'],
         },
-        data(){
+        data() {
             return {
-                products: products
+                datas: datas
             }
         },
         mounted() {
@@ -506,19 +1486,19 @@
             if (!isWechat) {
                 document.addEventListener("WeixinJSBridgeReady", function () {
                     var players_mask = document.getElementsByClassName("play_mask")
-                    for(var i=0; i < players_mask.length; ++i){
+                    for (var i = 0; i < players_mask.length; ++i) {
                         players_mask[i].style.display = "block"
                     }
                 }, false);
             }
-            if(isLimitedNetwork() || isWechat){
+            if (isLimitedNetwork() || isWechat) {
                 var players_mask = document.getElementsByClassName("play_mask")
-                for(var i=0; i < players_mask.length; ++i){
+                for (var i = 0; i < players_mask.length; ++i) {
                     players_mask[i].style.display = "block"
                 }
-            }else{
+            } else {
                 var players = document.getElementsByClassName("video_player")
-                for(var i=0; i < players.length; ++i){
+                for (var i = 0; i < players.length; ++i) {
                     players[i].play();
                 }
             }
@@ -527,14 +1507,14 @@
             playVideo(event) {
                 // remove play button and paly video
                 el = event.target
-                el.style.display="none"
+                el.style.display = "none"
                 player = el.parentElement.getElementsByTagName("video")[0]
                 player.play()
             },
             newInfo(event) {
                 el = event.target
                 info = el.getElementsByClassName("new_info")[0].innerText
-                if(info != "true" && info != "false" && info.trim() != ""){
+                if (info != "true" && info != "false" && info.trim() != "") {
                     showNew(info)
                 }
             },
@@ -547,15 +1527,94 @@
     }
     var app = Vue.createApp(allHandling)
     app.use(i18n)
+
+    app.use(naive)
+    // const meta = document.createElement('meta')
+    // meta.name = 'naive-ui-style'
+    // document.head.appendChild(meta)
+
     app.directive('new-tab', {
         mounted(el, binding) {
-            if (binding.value){
+            if (binding.value) {
                 el.setAttribute("target", "_blank")
             }
         }
     })
     var vm = app.mount('#products')
 </script>
+
+<style scoped>
+    .n-gradient-text {
+        font-size: 36px;
+    }
+
+    .n-layout-header,
+    .n-layout-footer {
+        background: rgba(128, 128, 128, 0.2);
+        padding: 24px;
+    }
+
+    .n-layout-sider {
+        background: rgba(128, 128, 128, 0.3);
+    }
+
+    .n-layout-content {
+        background: rgba(128, 128, 128, 0.4);
+    }
+
+    .card-img {
+        object-fit: scale-down;
+        height: 280px;
+        max-width: fit-content;
+    }
+
+    .carousel-img {
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .mobile-img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .normal-img {
+        width: 320px;
+        height: 240px;
+        object-fit: scale-down;
+    }
+
+    .card-tabs .n-tabs-nav--bar-type {
+        padding-left: 4px;
+    }
+
+    .custom-tabs .n-tabs-bar {
+        background-color: transparent !important;
+    }
+
+    .custom-tabs .n-tabs-bar::after {
+        background-color: rgba(255, 0, 0, 0.80);
+    }
+
+    .base_background {
+        background-color: #ffffff;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' x2='0' y1='1' y2='0'%3E%3Cstop offset='0' stop-color='%230FF'/%3E%3Cstop offset='1' stop-color='%23CF6'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' x1='0' x2='0' y1='0' y2='1'%3E%3Cstop offset='0' stop-color='%23F00'/%3E%3Cstop offset='1' stop-color='%23FC0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%23FFF' fill-opacity='0' stroke-miterlimit='10'%3E%3Cg stroke='url(%23a)' stroke-width='2'%3E%3Cpath transform='translate(0 0)' d='M1409 581 1450.35 511 1490 581z'/%3E%3Ccircle stroke-width='4' transform='rotate(0 800 450)' cx='500' cy='100' r='40'/%3E%3Cpath transform='translate(0 0)' d='M400.86 735.5h-83.73c0-23.12 18.74-41.87 41.87-41.87S400.86 712.38 400.86 735.5z'/%3E%3C/g%3E%3Cg stroke='url(%23b)' stroke-width='4'%3E%3Cpath transform='translate(0 0)' d='M149.8 345.2 118.4 389.8 149.8 434.4 181.2 389.8z'/%3E%3Crect stroke-width='8' transform='rotate(0 1089 759)' x='1039' y='709' width='100' height='100'/%3E%3Cpath transform='rotate(0 1400 132)' d='M1426.8 132.4 1405.7 168.8 1363.7 168.8 1342.7 132.4 1363.7 96 1405.7 96z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+    .head_background {
+        background-color: #ffffff;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 304 304' width='304' height='304'%3E%3Cpath fill='%23000000' fill-opacity='0.04' d='M44.1 224a5 5 0 1 1 0 2H0v-2h44.1zm160 48a5 5 0 1 1 0 2H82v-2h122.1zm57.8-46a5 5 0 1 1 0-2H304v2h-42.1zm0 16a5 5 0 1 1 0-2H304v2h-42.1zm6.2-114a5 5 0 1 1 0 2h-86.2a5 5 0 1 1 0-2h86.2zm-256-48a5 5 0 1 1 0 2H0v-2h12.1zm185.8 34a5 5 0 1 1 0-2h86.2a5 5 0 1 1 0 2h-86.2zM258 12.1a5 5 0 1 1-2 0V0h2v12.1zm-64 208a5 5 0 1 1-2 0v-54.2a5 5 0 1 1 2 0v54.2zm48-198.2V80h62v2h-64V21.9a5 5 0 1 1 2 0zm16 16V64h46v2h-48V37.9a5 5 0 1 1 2 0zm-128 96V208h16v12.1a5 5 0 1 1-2 0V210h-16v-76.1a5 5 0 1 1 2 0zm-5.9-21.9a5 5 0 1 1 0 2H114v48H85.9a5 5 0 1 1 0-2H112v-48h12.1zm-6.2 130a5 5 0 1 1 0-2H176v-74.1a5 5 0 1 1 2 0V242h-60.1zm-16-64a5 5 0 1 1 0-2H114v48h10.1a5 5 0 1 1 0 2H112v-48h-10.1zM66 284.1a5 5 0 1 1-2 0V274H50v30h-2v-32h18v12.1zM236.1 176a5 5 0 1 1 0 2H226v94h48v32h-2v-30h-48v-98h12.1zm25.8-30a5 5 0 1 1 0-2H274v44.1a5 5 0 1 1-2 0V146h-10.1zm-64 96a5 5 0 1 1 0-2H208v-80h16v-14h-42.1a5 5 0 1 1 0-2H226v18h-16v80h-12.1zm86.2-210a5 5 0 1 1 0 2H272V0h2v32h10.1zM98 101.9V146H53.9a5 5 0 1 1 0-2H96v-42.1a5 5 0 1 1 2 0zM53.9 34a5 5 0 1 1 0-2H80V0h2v34H53.9zm60.1 3.9V66H82v64H69.9a5 5 0 1 1 0-2H80V64h32V37.9a5 5 0 1 1 2 0zM101.9 82a5 5 0 1 1 0-2H128V37.9a5 5 0 1 1 2 0V82h-28.1zm16-64a5 5 0 1 1 0-2H146v44.1a5 5 0 1 1-2 0V18h-26.1zm102.2 270a5 5 0 1 1 0 2H98v14h-2v-16h124.1zM242 149.9V160h16v34h-16v62h48v48h-2v-46h-48v-66h16v-30h-16v-12.1a5 5 0 1 1 2 0zM53.9 18a5 5 0 1 1 0-2H64V2H48V0h18v18H53.9zm112 32a5 5 0 1 1 0-2H192V0h50v2h-48v48h-28.1zm-48-48a5 5 0 0 1-9.8-2h2.07a3 3 0 1 0 5.66 0H178v34h-18V21.9a5 5 0 1 1 2 0V32h14V2h-58.1zm0 96a5 5 0 1 1 0-2H137l32-32h39V21.9a5 5 0 1 1 2 0V66h-40.17l-32 32H117.9zm28.1 90.1a5 5 0 1 1-2 0v-76.51L175.59 80H224V21.9a5 5 0 1 1 2 0V82h-49.59L146 112.41v75.69zm16 32a5 5 0 1 1-2 0v-99.51L184.59 96H300.1a5 5 0 0 1 3.9-3.9v2.07a3 3 0 0 0 0 5.66v2.07a5 5 0 0 1-3.9-3.9H185.41L162 121.41v98.69zm-144-64a5 5 0 1 1-2 0v-3.51l48-48V48h32V0h2v50H66v55.41l-48 48v2.69zM50 53.9v43.51l-48 48V208h26.1a5 5 0 1 1 0 2H0v-65.41l48-48V53.9a5 5 0 1 1 2 0zm-16 16V89.41l-34 34v-2.82l32-32V69.9a5 5 0 1 1 2 0zM12.1 32a5 5 0 1 1 0 2H9.41L0 43.41V40.6L8.59 32h3.51zm265.8 18a5 5 0 1 1 0-2h18.69l7.41-7.41v2.82L297.41 50H277.9zm-16 160a5 5 0 1 1 0-2H288v-71.41l16-16v2.82l-14 14V210h-28.1zm-208 32a5 5 0 1 1 0-2H64v-22.59L40.59 194H21.9a5 5 0 1 1 0-2H41.41L66 216.59V242H53.9zm150.2 14a5 5 0 1 1 0 2H96v-56.6L56.6 162H37.9a5 5 0 1 1 0-2h19.5L98 200.6V256h106.1zm-150.2 2a5 5 0 1 1 0-2H80v-46.59L48.59 178H21.9a5 5 0 1 1 0-2H49.41L82 208.59V258H53.9zM34 39.8v1.61L9.41 66H0v-2h8.59L32 40.59V0h2v39.8zM2 300.1a5 5 0 0 1 3.9 3.9H3.83A3 3 0 0 0 0 302.17V256h18v48h-2v-46H2v42.1zM34 241v63h-2v-62H0v-2h34v1zM17 18H0v-2h16V0h2v18h-1zm273-2h14v2h-16V0h2v16zm-32 273v15h-2v-14h-14v14h-2v-16h18v1zM0 92.1A5.02 5.02 0 0 1 6 97a5 5 0 0 1-6 4.9v-2.07a3 3 0 1 0 0-5.66V92.1zM80 272h2v32h-2v-32zm37.9 32h-2.07a3 3 0 0 0-5.66 0h-2.07a5 5 0 0 1 9.8 0zM5.9 0A5.02 5.02 0 0 1 0 5.9V3.83A3 3 0 0 0 3.83 0H5.9zm294.2 0h2.07A3 3 0 0 0 304 3.83V5.9a5 5 0 0 1-3.9-5.9zm3.9 300.1v2.07a3 3 0 0 0-1.83 1.83h-2.07a5 5 0 0 1 3.9-3.9zM97 100a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-48 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 96a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-144a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-96 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm96 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-32 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM49 36a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-32 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM33 68a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 240a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm80-176a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm112 176a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM17 180a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM17 84a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6z'%3E%3C/path%3E%3C/svg%3E");
+    }
+
+    .news_background {
+        background-color: #FFFFFF;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='100' y1='33' x2='100' y2='-3'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='100' y1='135' x2='100' y2='97'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%23d4d4d4' fill-opacity='0.25'%3E%3Crect x='100' width='100' height='100'/%3E%3Crect y='100' width='100' height='100'/%3E%3C/g%3E%3Cg fill-opacity='0.25'%3E%3Cpolygon fill='url(%23a)' points='100 30 0 0 200 0'/%3E%3Cpolygon fill='url(%23b)' points='100 100 0 130 0 100 200 100 200 130'/%3E%3C/g%3E%3C/svg%3E");
+    }
+</style>
 
 {{ body|safe }}
 
