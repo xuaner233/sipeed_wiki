@@ -18,13 +18,977 @@
 <script src="/static/js/vue_i18n.js"></script>
 
 <div id="products">
-    <n-card style="padding-left: 4%; padding-right: 4%;">
-        <n-tabs default-value="right" type="segment" size="large" animated style="margin: 0 -4px"
-            pane-style="padding-left: 4px; padding-right: 4px; box-sizing: border-box;" trigger='hover'>
-            <n-tab-pane name="left" tab="产品中心">
-                <n-tabs default-value="p1" type="card"
+    <template>
+        <n-card style="padding-left: 4%; padding-right: 4%;">
+            <n-tabs default-value="right" type="segment" size="large" animated style="margin: 0 -4px"
+                pane-style="padding-left: 4px; padding-right: 4px; box-sizing: border-box;" trigger='hover'>
+                <n-tab-pane name="left" tab="产品中心">
+                    <n-tabs default-value="p1" type="card"
+                        tab-style="justify-content:center; display: flex; padding-left: 15px; padding-right: 15px; text-align: center; margin: 0 auto; font-size: 20px; "
+                        class="custom-tabs">
+                        <n-tab-pane name="p1" tab="Maix-I">
+                            <n-layout has-sider position="absolute" style="height: 700px; position: relative"
+                                class="head_background" hoverable>
+                                <n-grid cols="10" item-responsive responsive="screen">
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="边缘 AI MicroPython 开发" size="small" hoverable>
+                                            <img class="normal-img" src="/static/home/maixpy.jpeg">
+                                            <n-button-group style="margin: 5px; font-size: 20px;">
+                                                <n-button tag="a" href="https://github.com/sipeed/maixpy" target="_blank" round>
+                                                    源码仓库
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://wiki.sipeed.com/maixpy" target="_blank" round>
+                                                    使用文档
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="Maix Cube" size="small" hoverable>
+                                            <img class="normal-img"
+                                                src="https://img.alicdn.com/bao/uploaded/i3/2200606237318/O1CN01eb9ob023vhA51aLaE_!!2200606237318.jpg_240x240.jpg">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://item.taobao.com/item.htm?id=615468921411" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://wiki.sipeed.com/hardware/zh/maix/maixpy_develop_kit_board/maix_cube.html" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="Maix Amigo" size="small" hoverable>
+                                            <img class="normal-img"
+                                                src="https://gd4.alicdn.com/imgextra/i2/2200606237318/O1CN016Tbv3A23vhAC9QbgF_!!2200606237318.jpg_400x400.jpg">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://item.taobao.com/item.htm?id=624450348277" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://wiki.sipeed.com/hardware/zh/maix/maixpy_develop_kit_board/maix_Amigo.html" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="Maix Duino" size="small" hoverable>
+                                            <img class="normal-img"
+                                                src="https://gd4.alicdn.com/imgextra/i3/2200606237318/O1CN01uL1V3023vhAO1ffQJ_!!2200606237318.jpg_400x400.jpg">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://item.taobao.com/item.htm?id=595216523162" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://wiki.sipeed.com/hardware/zh/maix/maixpy_develop_kit_board/maix_duino.html" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="Maix Bit" size="small" hoverable>
+                                            <img class="normal-img"
+                                                src="https://gd3.alicdn.com/imgextra/i2/2200606237318/O1CN01Bc1o1723vhAJAZvOJ_!!2200606237318.jpg_400x400.jpg">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://item.taobao.com/item.htm?id=586580351110" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://wiki.sipeed.com/hardware/zh/maix/maixpy_develop_kit_board/maix_bit.html" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="Maix Dock" size="small" hoverable>
+                                            <img class="normal-img"
+                                                src="https://gd3.alicdn.com/imgextra/i1/2200606237318/O1CN01YFstXt23vhALCWX3a_!!2200606237318.jpg_400x400.jpg">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://item.taobao.com/item.htm?id=591616120470" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://wiki.sipeed.com/hardware/zh/maix/maixpy_develop_kit_board/Maix_dock.html" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="Maix HAT" size="small" hoverable>
+                                            <img class="normal-img"
+                                                src="https://gd4.alicdn.com/imgextra/i3/2200606237318/O1CN01V4vzsQ23vhAhBRn1C_!!2200606237318.png_400x400.jpg">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://item.taobao.com/item.htm?id=637432568692" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://wiki.sipeed.com/hardware/zh/maix/maixpy_develop_kit_board/maix_hat.html" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="Maix M1W" size="small" hoverable>
+                                            <img class="normal-img"
+                                                src="https://gd1.alicdn.com/imgextra/i3/2200606237318/O1CN01T5k8Oy23vhAEnnHZt_!!2200606237318.jpg_400x400.jpg">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://item.taobao.com/item.htm?id=584853693295" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://wiki.sipeed.com/hardware/zh/maix/core_module.html" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="Maix M1n" size="small" hoverable>
+                                            <img class="normal-img"
+                                                src="https://gd1.alicdn.com/imgextra/i4/2200606237318/O1CN01SAicn723vhAEW7RKt_!!2200606237318.jpg_400x400.jpg">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://item.taobao.com/item.htm?id=607174705842" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://wiki.sipeed.com/hardware/zh/maix/M1n.html" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="Maix GO" size="small" hoverable>
+                                            <img class="normal-img"
+                                                src="https://wiki.sipeed.com/hardware/zh/maix/assets/dk_board/maix_go/Go.jpg">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button disabled round>
+                                                    现已停产
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://wiki.sipeed.com/hardware/zh/maix/maixpy_develop_kit_board/maix_go.html" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                </n-grid>
+                            </n-layout>
+                        </n-tab-pane>
+                        <n-tab-pane name="p2" tab="Maix-II & III">
+                            <n-layout has-sider position="absolute" style="height: 700px; position: relative"
+                                class="head_background" hoverable>
+                                <n-grid cols="10" item-responsive responsive="screen">
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="边缘 AI Python3 开发环境" size="small" hoverable>
+                                            <img class="normal-img" src="/static/home/maixpy3.jpeg">
+                                            <n-button-group style="margin: 5px; font-size: 18px;">
+                                                <n-button tag="a" href="https://github.com/sipeed/maixpy3" target="_blank"
+                                                    round>
+                                                    源码仓库
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://wiki.sipeed.com/maixpy3" target="_blank"
+                                                    round>
+                                                    使用文档
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                </n-grid>
+                            </n-layout>
+                        </n-tab-pane>
+                        <n-tab-pane name="p3" tab="LicheePi">
+                            <n-layout has-sider position="absolute" style="height: 700px; position: relative"
+                                class="head_background" hoverable>
+                                <n-grid cols="10" item-responsive responsive="screen">
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="LicheePi RV" size="small" hoverable>
+                                            <img class="normal-img" src="https://gd3.alicdn.com/imgextra/i3/2200606237318/O1CN01MEgUIo23vhAFhUCq0_!!2200606237318.jpg_400x400.jpg">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://item.taobao.com/item.htm?id=660478137105" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://wiki.sipeed.com/hardware/zh/lichee/RV/RV.html" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="LicheePi RV DOCK" size="small" hoverable>
+                                            <img class="normal-img" src="https://gd3.alicdn.com/imgextra/i1/2200606237318/O1CN01OulXPA23vhA9FKbmd_!!2200606237318.jpg_400x400.jpg">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://item.taobao.com/item.htm?id=666274331852" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://wiki.sipeed.com/hardware/zh/lichee/RV/Dock.html" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item> -->
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="LicheePi RV 86 panel" size="small" hoverable>
+                                            <img class="normal-img" src="https://gd3.alicdn.com/imgextra/i1/2200606237318/O1CN01dJMnXa23vhAJB8hsd_!!2200606237318.jpg_400x400.jpg">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://item.taobao.com/item.htm?id=663345415205" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://wiki.sipeed.com/hardware/zh/lichee/RV/86_panel.html" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="LicheePi Zero" size="small" hoverable>
+                                            <img class="normal-img" src="https://gd4.alicdn.com/imgextra/i2/2200606237318/O1CN019QAynl23vhAAzYMLR_!!2200606237318.jpg_400x400.jpg">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://item.taobao.com/item.htm?id=585033586770" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://wiki.sipeed.com/hardware/zh/lichee/Zero/Zero.html" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="LicheePi Nano" size="small" hoverable>
+                                            <img class="normal-img" src="//gd3.alicdn.com/imgextra/i2/2200606237318/O1CN01DCSn0723vhAKs8FnH_!!2200606237318.jpg_400x400.jpg">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://item.taobao.com/item.htm?id=584657396198" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://wiki.sipeed.com/hardware/zh/lichee/Nano/Nano.html" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="LicheePi Zeroplus" size="small" hoverable>
+                                            <img class="normal-img" src="https://wiki.sipeed.com/hardware/zh/lichee/assets/Zero-Plus/Plus_1.jpg" width=350>
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button disabled round>
+                                                    现已停产
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://wiki.sipeed.com/hardware/zh/lichee/ZeroPlus/ZeroPlus.html" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                </n-grid>
+                            </n-layout>
+                        </n-tab-pane>
+                        <n-tab-pane name="p4" tab="Tang">
+                            <n-layout has-sider position="absolute" style="height: 700px; position: relative"
+                                class="head_background" hoverable>
+                                <n-grid cols="10" item-responsive responsive="screen">
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="Tang Primer 20k" size="small" hoverable>
+                                            <img class="normal-img" src="https://gd3.alicdn.com/imgextra/i3/2200606237318/O1CN01Xe11pH23vhBRw4zLG_!!2200606237318.jpg_400x400.jpg">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://item.taobao.com/item.htm?id=680099020807" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://wiki.sipeed.com/hardware/zh/tang/tang-primer-20k/primer-20k.html" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="Tang Nano 9K" size="small" hoverable>
+                                            <img class="normal-img" src="https://gd1.alicdn.com/imgextra/i2/2200606237318/O1CN010ZU7AZ23vhAO2pYsr_!!2200606237318.jpg_400x400.jpg">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://item.taobao.com/item.htm?id=666055424174" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://wiki.sipeed.com/hardware/zh/tang/Tang-Nano-9K/Nano-9K.html" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="Tang Nano 4K" size="small" hoverable>
+                                            <img class="normal-img" src="https://gd3.alicdn.com/imgextra/i3/2200606237318/O1CN01sA5bRZ23vhADC0MmP_!!2200606237318.jpg_400x400.jpg">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://item.taobao.com/item.htm?id=661994055100" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://wiki.sipeed.com/hardware/zh/tang/Tang-Nano-4K/Nano-4K.html" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="Tang Nano 1K" size="small" hoverable>
+                                            <img class="normal-img" src="https://gd3.alicdn.com/imgextra/i1/2200606237318/O1CN01oSMyeW23vhAGKY8rO_!!2200606237318.jpg_400x400.jpg">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://item.taobao.com/item.htm?id=661994055100" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://wiki.sipeed.com/hardware/zh/tang/Tang-Nano-1K/Nano-1k.html" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="Tang Primer" size="small" hoverable>
+                                            <img class="normal-img" src="https://wiki.sipeed.com/hardware/assets/Tang/permier/Tang_permier.jpg" width=350>
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button disabled round>
+                                                    现已停产
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://wiki.sipeed.com/hardware/zh/tang/Tang-primer/Tang-primer.html" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="Tang Nano" size="small" hoverable>
+                                            <img class="normal-img" src="https://wiki.sipeed.com/hardware/assets/Tang/Nano/Tang_Nano.jpg" width=350>
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button disabled round>
+                                                    现已停产
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://wiki.sipeed.com/hardware/zh/tang/Tang-Nano/Nano.html" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                </n-grid>
+                            </n-layout>
+                        </n-tab-pane>
+                        <n-tab-pane name="p5" tab="MetaSense">
+                            <n-layout has-sider position="absolute" style="height: 700px; position: relative"
+                                class="head_background" hoverable>
+                                <n-grid cols="10" item-responsive responsive="screen">
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="A010" size="small" hoverable>
+                                            <img class="normal-img" src="https://picsum.photos/seed/111/320/240">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://wiki.sipeed.com/hardware/zh/metasense/metasense-a010/metasense-a010.html" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="A075V" size="small" hoverable>
+                                            <img class="normal-img" src="https://picsum.photos/seed/222/320/240">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://wiki.sipeed.com/hardware/zh/metasense/metasense-a075v/metasense-a075v.html" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                </n-grid>
+                            </n-layout>
+                        </n-tab-pane>
+                        <n-tab-pane name="p6" tab="Maix-Zero">
+                            <n-layout has-sider position="absolute" style="height: 700px; position: relative"
+                                class="head_background" hoverable>
+                                <n-grid cols="10" item-responsive responsive="screen">
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="某某产品" size="small" hoverable>
+                                            <img class="normal-img" src="https://picsum.photos/seed/444/320/240">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                </n-grid>
+                            </n-layout>
+                        </n-tab-pane>
+                        <n-tab-pane name="p7" tab="MaixFace">
+                            <n-layout has-sider position="absolute" style="height: 700px; position: relative"
+                                class="head_background" hoverable>
+                                <n-grid cols="10" item-responsive responsive="screen">
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="MF1" size="small" hoverable>
+                                            <img class="normal-img" src="https://img.alicdn.com/imgextra/i2/2200606237318/O1CN01H8SqoX23vh39Zp9vF_!!2200606237318.jpg_400x400.jpg">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://item.taobao.com/item.htm?id=599138281058" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://wiki.sipeed.com/hardware/zh/maixface/mf_ml_module/mf1_ml_module.html" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="MF0" size="small" hoverable>
+                                            <img class="normal-img" src="/hardware/assets/maixface/mf0/mf0_front.jpg" alt="mf0">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button disabled round>
+                                                    现已停产
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://wiki.sipeed.com/hardware/zh/maixface/mf_ml_module/mf0_ml_module.html" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="MF5" size="small" hoverable>
+                                            <img class="normal-img" src="/hardware/assets/maixface/mf5/mf5.jpg" alt="mf5">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button disabled round>
+                                                    现已停产
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://wiki.sipeed.com/hardware/zh/maixface/mf_ml_module/mf5_product.html" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                </n-grid>
+                            </n-layout>
+                        </n-tab-pane>
+                        <n-tab-pane name="p8" tab="外设配件">
+                            <n-layout has-sider position="absolute" style="height: 700px; position: relative"
+                                class="head_background" hoverable>
+                                <n-grid cols="10" item-responsive responsive="screen">
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="MicArray 麦克风阵列" size="small" hoverable>
+                                            <img class="normal-img" src="https://gd2.alicdn.com/imgextra/i2/2200606237318/O1CN01iWgLWE23vhAFV0ClM_!!2200606237318.jpg">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://item.taobao.com/item.htm?spm=a1z10.5-c-s.w4002-21410578033.10.38c91e6erGBI4k&id=624545696681" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://wiki.sipeed.com/hardware/zh/modules/micarray.html" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="转接板类 SPMOD - Extender" size="small" hoverable>
+                                            <img class="normal-img" src="https://gd1.alicdn.com/imgextra/i1/2200606237318/O1CN01t46VdO23vhAAkeBGg_!!2200606237318.jpg">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://item.taobao.com/item.htm?spm=a1z10.5-c-s.w4002-21410578033.10.38c91e6erGBI4k&id=624545696681" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://wiki.sipeed.com/hardware/zh/modules_spmod/spmod_extender.html" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="转接板类 SPMOD - Grove" size="small" hoverable>
+                                            <img class="normal-img" src="https://gd2.alicdn.com/imgextra/i4/2200606237318/O1CN01z90MGo23vhAFNZ7fb_!!2200606237318.jpg_400x400.jpg">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://item.taobao.com/item.htm?spm=a1z10.5-c-s.w4002-21410578033.10.38c91e6erGBI4k&id=624545696681" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://wiki.sipeed.com/hardware/zh/modules_spmod/spmod_grove.html" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="转接板类 SPMOD - FPC" size="small" hoverable>
+                                            <img class="normal-img" src="https://gd1.alicdn.com/imgextra/i1/2200606237318/O1CN01mlbrti23vhAKjGczj_!!2200606237318.jpg_400x400.jpg">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://wiki.sipeed.com/hardware/zh/modules_spmod/spmod_fpc.html" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://item.taobao.com/item.htm?spm=a1z10.5-c-s.w4002-21410578033.10.38c91e6erGBI4k&id=624545696681" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="转接板类 SPMOD - MicArray" size="small" hoverable>
+                                            <img class="normal-img" src="https://gd1.alicdn.com/imgextra/i1/2200606237318/O1CN01kIVANn23vhAKjHy8Y_!!2200606237318.jpg_400x400.jpg">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://wiki.sipeed.com/hardware/zh/modules_spmod/spmod_micarray.html" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://item.taobao.com/item.htm?spm=a1z10.5-c-s.w4002-21410578033.10.38c91e6erGBI4k&id=624545696681" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="转接板类 SPMOD - JotStick" size="small" hoverable>
+                                            <img class="normal-img" src="https://gd1.alicdn.com/imgextra/i3/2200606237318/O1CN01hzOZ3a23vhAG97k5l_!!2200606237318.jpg_400x400.jpg">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://wiki.sipeed.com/hardware/zh/modules_spmod/spmod_joystick.html" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://item.taobao.com/item.htm?spm=a1z10.5-c-s.w4002-21410578033.10.38c91e6erGBI4k&id=624545696681" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="转接板类 SPMOD - Servo" size="small" hoverable>
+                                            <img class="normal-img" src="https://gd1.alicdn.com/imgextra/i4/2200606237318/O1CN019xqp0H23vhAMjPiv4_!!2200606237318.jpg_400x400.jpg">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://wiki.sipeed.com/hardware/zh/modules_spmod/spmod_servo.html" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://item.taobao.com/item.htm?spm=a1z10.5-c-s.w4002-21410578033.10.38c91e6erGBI4k&id=624545696681" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="传感器类 SPMOD - Weather" size="small" hoverable>
+                                            <img class="normal-img" src="https://gd3.alicdn.com/imgextra/i2/2200606237318/O1CN01WabdBY23vhAKjIq9e_!!2200606237318.jpg_400x400.jpg">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://wiki.sipeed.com/hardware/zh/modules_spmod/spmod_weather.html" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://item.taobao.com/item.htm?spm=a1z10.5-c-s.w4002-21410578033.10.38c91e6erGBI4k&id=624545696681" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="传感器类 SPMOD - TOF - 1P" size="small" hoverable>
+                                            <img class="normal-img" src="https://gd1.alicdn.com/imgextra/i1/2200606237318/O1CN01t7dWVV23vhAMjOmgh_!!2200606237318.jpg_400x400.jpg">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://wiki.sipeed.com/hardware/zh/modules_spmod/spmod_tof.html" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://item.taobao.com/item.htm?spm=a1z10.5-c-s.w4002-21410578033.10.38c91e6erGBI4k&id=624545696681" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="通信类 SPMOD - BT" size="small" hoverable>
+                                            <img class="normal-img" src="https://gd2.alicdn.com/imgextra/i4/2200606237318/O1CN01LP2Bbg23vhAFNWVXU_!!2200606237318.jpg_400x400.jpg">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://wiki.sipeed.com/hardware/zh/modules_spmod/spmod_bt.html" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://item.taobao.com/item.htm?spm=a1z10.5-c-s.w4002-21410578033.10.38c91e6erGBI4k&id=624545696681" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="通信类 SPMOD - LoRa" size="small" hoverable>
+                                            <img class="normal-img" src="https://gd3.alicdn.com/imgextra/i2/2200606237318/O1CN01Dtk8mc23vhAHfzvZz_!!2200606237318.jpg_400x400.jpg">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://wiki.sipeed.com/hardware/zh/modules_spmod/spmod_lora.html" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://item.taobao.com/item.htm?spm=a1z10.5-c-s.w4002-21410578033.10.38c91e6erGBI4k&id=624545696681" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="通信类 SPMOD - PSRAM" size="small" hoverable>
+                                            <img class="normal-img" src="https://gd1.alicdn.com/imgextra/i4/2200606237318/O1CN01Ym0wNi23vhAHE9IHW_!!2200606237318.jpg_400x400.jpg">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://wiki.sipeed.com/hardware/zh/modules_spmod/spmod_psram.html" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://item.taobao.com/item.htm?spm=a1z10.5-c-s.w4002-21410578033.10.38c91e6erGBI4k&id=624545696681" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="通信类 SPMOD - RFID" size="small" hoverable>
+                                            <img class="normal-img" src="https://gd1.alicdn.com/imgextra/i1/2200606237318/O1CN01eDttVn23vhANuaCSQ_!!2200606237318.jpg_400x400.jpg">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://wiki.sipeed.com/hardware/zh/modules_spmod/spmod_rfid.html" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://item.taobao.com/item.htm?spm=a1z10.5-c-s.w4002-21410578033.10.38c91e6erGBI4k&id=624545696681" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="通信类 SPMOD - Ethernet" size="small" hoverable>
+                                            <img class="normal-img" src="https://gd1.alicdn.com/imgextra/i3/2200606237318/O1CN01WAeut023vhAFNYzLO_!!2200606237318.jpg_400x400.jpg">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://wiki.sipeed.com/hardware/zh/modules_spmod/spmod_ethernet.html" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://item.taobao.com/item.htm?spm=a1z10.5-c-s.w4002-21410578033.10.38c91e6erGBI4k&id=624545696681" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="显示类 SPMOD - LCD 1.14" size="small" hoverable>
+                                            <img class="normal-img" src="https://gd1.alicdn.com/imgextra/i1/2200606237318/O1CN01vlQaEI23vhAFTJLRH_!!2200606237318.jpg_400x400.jpg">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://wiki.sipeed.com/hardware/zh/modules_spmod/spmod_lcd1.14.html" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://item.taobao.com/item.htm?spm=a1z10.5-c-s.w4002-21410578033.10.38c91e6erGBI4k&id=624545696681" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="显示类 SPMOD - Eink" size="small" hoverable>
+                                            <img class="normal-img" src="https://gd4.alicdn.com/imgextra/i4/2200606237318/O1CN018uTgJk23vhAKjJ2dM_!!2200606237318.jpg_400x400.jpg">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://wiki.sipeed.com/hardware/zh/modules_spmod/spmod_eink.html" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://item.taobao.com/item.htm?spm=a1z10.5-c-s.w4002-21410578033.10.38c91e6erGBI4k&id=624545696681" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                </n-grid>
+                            </n-layout>
+                        </n-tab-pane>
+                        <n-tab-pane name="p9" tab="商用模块">
+                            <n-layout has-sider position="absolute" style="height: 700px; position: relative"
+                                class="head_background" hoverable>
+                                <n-grid cols="10" item-responsive responsive="screen">
+                                    <n-grid-item span="10 s:5 m:2 l:2" style="padding: 4%;">
+                                        <n-card title="Maixll S" size="small" hoverable>
+                                            <img class="normal-img" src="https://wiki.sipeed.com/hardware/zh/maixII/M2S/assets/M2s_Dock.jpg">
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button tag="a" href="https://anyway.fm/news.php" target="_blank" round>
+                                                    购买链接
+                                                </n-button>
+                                                <n-button style="color:#ffffff;" color="#e34548" tag="a" href="https://wiki.sipeed.com/hardware/zh/maixII/M2S/reources.html" target="_blank" round>
+                                                    产品资料
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-card>
+                                    </n-grid-item>
+                                </n-grid>
+                            </n-layout>
+                        </n-tab-pane>
+                    </n-tabs>
+                </n-tab-pane>
+                <n-tab-pane name="right" tab="最新动态">
+                    <n-card class="news_background" hoverable>
+                        <n-grid cols="10" item-responsive responsive="screen">
+                            <n-grid-item span="10 s:0 m:0 l:0">
+                                <n-card title="桌面版有更多内容喔！" size="huge" style="margin-bottom: 20px;">
+                                </n-card>
+                                <n-card title="构建软件生态" size="small"
+                                    style="margin-bottom: 20px; display: flex; max-width: fit-content; max-height: 580px;"
+                                    hoverable>
+                                    <img class="mobile-img"
+                                        src="https://ts1.cn.mm.bing.net/th/id/R-C.a4c7594450e12d747064ebbd53a99c46?rik=OxRyupwdy96rlw&riu=http%3a%2f%2fwww.0easy.com%2fuploads%2fallimg%2f190823%2f1-1ZR3155010445.jpg&ehk=Jw6QdN7xohD0fC9IBd1mD7u%2fNpAM8xdJMiOth%2frYatg%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1">
+                                </n-card>
+                                <n-card title="交流开源技术" size="small"
+                                    style="margin-bottom: 20px; display: flex; max-width: fit-content; max-height: 580px;"
+                                    hoverable>
+                                    <img class="mobile-img"
+                                        src="https://ts1.cn.mm.bing.net/th/id/R-C.41c59cb20350f4ddea6e445d904d237e?rik=EKFNj5LjGCC4mw&riu=http%3a%2f%2fwww.0easy.com%2fuploads%2fallimg%2f191022%2f1-19102213561D45.png&ehk=47qnsgL8PAjoRIRvgBMknWovL7rltBvj9bJ9DqxUg0g%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1">
+                                </n-card>
+                                <n-card title="推动行业发展" size="small"
+                                    style="margin-bottom: 20px; display: flex; max-width: fit-content; max-height: 580px;"
+                                    hoverable>
+                                    <img class="mobile-img"
+                                        src="https://pic2.zhimg.com/v2-6111e87b41762219d87feacbd5e27158_1440w.jpg?source=172ae18b">
+                                </n-card>
+                            </n-grid-item>
+                            <n-grid-item span="0 s:10 m:10 l:10" style="margin-left: 1%; margin-right: 1%;">
+                                <n-card size="small" style="margin: auto; display: flex; height: 720px; " hoverable>
+                                    <n-tabs type="line" trigger='hover'>
+                                        <n-tab-pane name="近期热点事件">
+                                            <n-card style="margin: auto; display: fit-content; max-height: fit-content;">
+                                                <n-carousel effect="card" class="base_background"
+                                                    prev-slide-style="transform: translateX(-150%) translateZ(-1200px);"
+                                                    next-slide-style="transform: translateX(50%) translateZ(-1200px);"
+                                                    :show-dots="false" autoplay draggable style="height: 600px">
+                                                    <n-carousel-item :style="{ width: '80%' }">
+                                                        <n-card size="small" hoverable>
+                                                            <img class="carousel-img" src="/static/home/banner-1.jpg">
+                                                        </n-card>
+                                                    </n-carousel-item>
+                                                    <n-carousel-item :style="{ width: '80%' }">
+                                                        <n-card size="small" hoverable>
+                                                            <img class="carousel-img" src="/static/home/banner-2.jpg">
+                                                            <n-divider title-placement="right">
+                                                                <n-button-group style="margin: 5px; font-size: 16px;">
+                                                                    <n-button size="large"
+                                                                        href="https://item.taobao.com/item.htm?spm=a1z10.1-c-s.w4004-24053782153.3.3d3252b1jsMNM4&id=680099020807"
+                                                                        target="_blank" tag="a" type="error" ghost>
+                                                                        产品使用手册
+                                                                    </n-button>
+                                                                    <n-button size="large"
+                                                                        style="color:#ffffff; " color="#e34548"
+                                                                        href="/news/others/20k_lite_start/20k_lite_start.html"
+                                                                        tag="a" target="_blank" round>
+                                                                        预售价：￥199.00
+                                                                    </n-button>
+                                                                </n-button-group>
+                                                            </n-divider>
+                                                        </n-card>
+                                                    </n-carousel-item>
+                                                    <n-carousel-item :style="{ width: '80%' }">
+                                                        <n-card size="small" hoverable>
+                                                            <!-- <img class="carousel-img" src="/static/home/banner-3.jpg"> -->
+                                                            <a
+                                                            href="http://www.fpgachina.cn/details?id=4c8d620a25bf4c57a27c82b077338510&value=2"
+                                                            tag="a" target="_blank">
+                                                                <img class="carousel-img" src="http://www.fpgachina.cn/images/inside_banner.png">
+                                                                <img class="carousel-img" src="http://www.fpgachina.cn/file/banner/37e513ed1b85480385ec9237167296c8.png">
+                                                            </a>
+                                                        </n-card>
+                                                    </n-carousel-item>
+                                                    <n-carousel-item :style="{ width: '80%' }">
+                                                        <n-card size="small" hoverable>
+                                                            <img class="carousel-img" src="/static/home/banner-4.jpg">
+                                                        </n-card>
+                                                    </n-carousel-item>
+                                                </n-carousel>
+                                            </n-card>
+                                        </n-tab-pane>
+                                        <n-tab-pane name="Primer 20K Lite 上新">
+                                            <n-layout style="position: relative" has-sider position="absolute" hoverable>
+                                                <n-card class="base_background"
+                                                    style="margin: auto; display: fit-content; max-height: 600px;">
+                                                    <h1>初见 Primer 20K Lite 之点灯奥义</h1>
+                                                    <n-divider title-placement="left">
+                                                        <n-rate size="large" readonly :default-value="3" />
+                                                    </n-divider>
+                                                    <n-ellipsis expand-trigger="click" line-clamp="1" :tooltip="false">
+                                                        Tang Primer 20K 是基于 GW2A-V18PG256C8IC8I7 所设计的一款 DDR3 sodimm
+                                                        封装的核心板，额外准备了两个底板，分别为 Dock 底板和 Lite 底板。作为 Sipeed 所发售的第六款 FPGA 产品，Tang
+                                                        Primer 20K 一直广受关注。<br>
+                                                        得益于 GW2A 丰富的资源，Tang Primer 20K 可以满足多种项目需求；例如当下最火的“IC设计”，可以使用高云所提供的
+                                                        Gowin_EMPU_M1、PicoRV32两款软核来体验一下 mcu 软核，或者也可以用来验证自己所设计的软核。<br>
+                                                    </n-ellipsis>
+                                                    <div>
+                                                        <img class="card-img"
+                                                            src="https://gd1.alicdn.com/imgextra/i3/2200606237318/O1CN01Xe11pH23vhBRw4zLG_!!2200606237318.jpg_400x400.jpg">
+                                                        <img class="card-img"
+                                                            src="/news/others/20k_lite_start/assets/result.gif">
+                                                    </div>
+                                                    <n-divider title-placement="right">
+                                                        <n-button-group>
+                                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                                <n-button size="large"
+                                                                    href="https://item.taobao.com/item.htm?spm=a1z10.1-c-s.w4004-24053782153.3.3d3252b1jsMNM4&id=680099020807"
+                                                                    target="_blank" tag="a" type="error" ghost>
+                                                                    活动价：￥199.00
+                                                                </n-button>
+                                                                <n-button size="large" style="color:#ffffff;" color="#e34548"
+                                                                    href="/news/others/20k_lite_start/20k_lite_start.html"
+                                                                    tag="a" target="_blank" round>
+                                                                    阅读更多
+                                                                </n-button>
+                                                            </n-button-group>
+                                                        </n-button-group>
+                                                    </n-divider>
+                                                </n-card>
+                                            </n-layout>
+                                        </n-tab-pane><n-tab-pane name="MetaSense 系列登场">
+                                            1. 本次新品我们带来了两款，分别是什么
+                                            2. 什么是 tof ？ 什么是 metaSense ？
+                                            4. 与市面上所用的产品有什么不同，亮点是？价格是？在哪购买？
+                                        </n-tab-pane>
+                                        <n-tab-pane name="今年电赛精彩回顾">
+                                            1. 原本想象中的是视觉题，结果 k210 大展身手，麦克风阵列宝刀未老！
+                                            3. 都有哪些精彩现场视频可以回顾呢！
+                                            4. 最后电赛交流群： 来年再战吧！
+                                        </n-tab-pane>
+                                        <n-tab-pane name="MaixHub 全新出发">
+                                            1. maixhub 大更新，更新都有哪些亮点呢？
+                                            2. 陆续支持哪些内容呢？比如 TinyMaix MAIXPY MAIXPY3 等产品系列。
+                                            3. 那么在哪呢？
+                                        </n-tab-pane>
+                                        <n-tab-pane name="全国 FPGA 创新设计大赛">
+                                            1. 比赛内容都有哪些内容呢？从官网节选
+                                            2. 高云系 20k 产品资料都在哪？可以在哪找到？github 上可以用什么关键词。
+                                            3. 在此预祝各位同学大赛中旗开得胜！
+                                        </n-tab-pane>
+                                        <n-tab-pane name="Maix AI 高端战力新品">
+                                            1. 什么是 爱芯 AX620A 芯片亮点是？
+                                            2. 我们提供了什么？对比前两代前辈有什么不同？
+                                            3. 在哪预售呢？？？搭配一些展会靓照
+                                        </n-tab-pane>
+                                        <n-tab-pane name="一次 AI 与 MCU 的碰撞！">
+                                            1. TinyMaix 是什么？特点是？都有哪些新闻？
+                                            2. 你的板子在支持列表吗？向我们请愿吧！
+                                            3. 如何加入开发或讨论呢？
+                                        </n-tab-pane>
+                                    </n-tabs>
+                                </n-card>
+                            </n-grid-item>
+                        </n-grid>
+                    </n-card>
+                </n-tab-pane>
+            </n-tabs>
+        </n-card>
+    </template>
+
+    <n-card class="news_background" hoverable>
+        <n-grid cols="9" item-responsive responsive="screen">
+            <n-grid-item span="0 s:9 m:9 l:9" style="margin-left: 1%; margin-right: 1%; margin-bottom: 10px; ">
+                <n-card size="small" style="margin: auto; display: flex; height: 720px; " hoverable>
+                    <n-tabs type="line" trigger='hover' justify-content="space-evenly">
+                        <n-tab-pane name="近期热点事件">
+                            <n-card style="margin: auto; display: fit-content; max-height: fit-content;">
+                                <n-carousel effect="card" class="base_background"
+                                    prev-slide-style="transform: translateX(-150%) translateZ(-1200px);"
+                                    next-slide-style="transform: translateX(50%) translateZ(-1200px);"
+                                    :show-dots="false" autoplay draggable style="height: 600px">
+                                    <n-carousel-item :style="{ width: '80%' }">
+                                        <n-card size="small" hoverable>
+                                            <img class="carousel-img" src="/static/home/banner-1.jpg">
+                                        </n-card>
+                                    </n-carousel-item>
+                                    <n-carousel-item :style="{ width: '80%' }">
+                                        <n-card size="small" hoverable>
+                                            <img class="carousel-img" src="/static/home/banner-2.jpg">
+                                            <n-divider title-placement="right">
+                                                <n-button-group style="margin: 5px; font-size: 16px;">
+                                                    <n-button size="large"
+                                                        href="https://item.taobao.com/item.htm?spm=a1z10.1-c-s.w4004-24053782153.3.3d3252b1jsMNM4&id=680099020807"
+                                                        target="_blank" tag="a" type="error" ghost>
+                                                        产品使用手册
+                                                    </n-button>
+                                                    <n-button size="large"
+                                                        style="color:#ffffff; " color="#e34548"
+                                                        href="/news/others/20k_lite_start/20k_lite_start.html"
+                                                        tag="a" target="_blank" round>
+                                                        预售价：￥199.00
+                                                    </n-button>
+                                                </n-button-group>
+                                            </n-divider>
+                                        </n-card>
+                                    </n-carousel-item>
+                                    <n-carousel-item :style="{ width: '80%' }">
+                                        <n-card size="small" hoverable>
+                                            <!-- <img class="carousel-img" src="/static/home/banner-3.jpg"> -->
+                                            <a
+                                            href="http://www.fpgachina.cn/details?id=4c8d620a25bf4c57a27c82b077338510&value=2"
+                                            tag="a" target="_blank">
+                                                <img class="carousel-img" src="http://www.fpgachina.cn/images/inside_banner.png">
+                                                <img class="carousel-img" src="http://www.fpgachina.cn/file/banner/37e513ed1b85480385ec9237167296c8.png">
+                                            </a>
+                                        </n-card>
+                                    </n-carousel-item>
+                                    <n-carousel-item :style="{ width: '80%' }">
+                                        <n-card size="small" hoverable>
+                                            <img class="carousel-img" src="/static/home/banner-4.jpg">
+                                        </n-card>
+                                    </n-carousel-item>
+                                </n-carousel>
+                            </n-card>
+                        </n-tab-pane>
+                        <n-tab-pane name="Primer 20K Lite 上新">
+                            <n-layout style="position: relative" has-sider position="absolute" hoverable>
+                                <n-card class="base_background"
+                                    style="margin: auto; display: fit-content; max-height: 600px;">
+                                    <h1>初见 Primer 20K Lite 之点灯奥义</h1>
+                                    <n-divider title-placement="left">
+                                        <n-rate size="large" readonly :default-value="3" />
+                                    </n-divider>
+                                    <n-ellipsis expand-trigger="click" line-clamp="1" :tooltip="false">
+                                        Tang Primer 20K 是基于 GW2A-V18PG256C8IC8I7 所设计的一款 DDR3 sodimm
+                                        封装的核心板，额外准备了两个底板，分别为 Dock 底板和 Lite 底板。作为 Sipeed 所发售的第六款 FPGA 产品，Tang
+                                        Primer 20K 一直广受关注。<br>
+                                        得益于 GW2A 丰富的资源，Tang Primer 20K 可以满足多种项目需求；例如当下最火的“IC设计”，可以使用高云所提供的
+                                        Gowin_EMPU_M1、PicoRV32两款软核来体验一下 mcu 软核，或者也可以用来验证自己所设计的软核。<br>
+                                    </n-ellipsis>
+                                    <div>
+                                        <img class="card-img"
+                                            src="https://gd1.alicdn.com/imgextra/i3/2200606237318/O1CN01Xe11pH23vhBRw4zLG_!!2200606237318.jpg_400x400.jpg">
+                                        <img class="card-img"
+                                            src="/news/others/20k_lite_start/assets/result.gif">
+                                    </div>
+                                    <n-divider title-placement="right">
+                                        <n-button-group>
+                                            <n-button-group style="margin: 5px; font-size: 16px;">
+                                                <n-button size="large"
+                                                    href="https://item.taobao.com/item.htm?spm=a1z10.1-c-s.w4004-24053782153.3.3d3252b1jsMNM4&id=680099020807"
+                                                    target="_blank" tag="a" type="error" ghost>
+                                                    活动价：￥199.00
+                                                </n-button>
+                                                <n-button size="large" style="color:#ffffff;" color="#e34548"
+                                                    href="/news/others/20k_lite_start/20k_lite_start.html"
+                                                    tag="a" target="_blank" round>
+                                                    阅读更多
+                                                </n-button>
+                                            </n-button-group>
+                                        </n-button-group>
+                                    </n-divider>
+                                </n-card>
+                            </n-layout>
+                        </n-tab-pane><n-tab-pane name="MetaSense 系列登场">
+                            1. 本次新品我们带来了两款，分别是什么
+                            2. 什么是 tof ？ 什么是 metaSense ？
+                            4. 与市面上所用的产品有什么不同，亮点是？价格是？在哪购买？
+                        </n-tab-pane>
+                        <n-tab-pane name="2022年电赛精彩回顾">
+                            1. 原本想象中的是视觉题，结果 k210 大展身手，麦克风阵列宝刀未老！
+                            3. 都有哪些精彩现场视频可以回顾呢！
+                            4. 最后电赛交流群： 来年再战吧！
+                        </n-tab-pane>
+                        <n-tab-pane name="MaixHub 全新出发">
+                            1. maixhub 大更新，更新都有哪些亮点呢？
+                            2. 陆续支持哪些内容呢？比如 TinyMaix MAIXPY MAIXPY3 等产品系列。
+                            3. 那么在哪呢？
+                        </n-tab-pane>
+                        <n-tab-pane name="全国 FPGA 创新设计大赛">
+                            1. 比赛内容都有哪些内容呢？从官网节选
+                            2. 高云系 20k 产品资料都在哪？可以在哪找到？github 上可以用什么关键词。
+                            3. 在此预祝各位同学大赛中旗开得胜！
+                        </n-tab-pane>
+                        <n-tab-pane name="Maix AI 高端战力新品">
+                            1. 什么是 爱芯 AX620A 芯片亮点是？
+                            2. 我们提供了什么？对比前两代前辈有什么不同？
+                            3. 在哪预售呢？？？搭配一些展会靓照
+                        </n-tab-pane>
+                        <n-tab-pane name="一次 AI 与 MCU 的碰撞！">
+                            1. TinyMaix 是什么？特点是？都有哪些新闻？
+                            2. 你的板子在支持列表吗？向我们请愿吧！
+                            3. 如何加入开发或讨论呢？
+                        </n-tab-pane>
+                    </n-tabs>
+                </n-card>
+            </n-grid-item>
+            <n-grid-item span="9 s:9 m:9 l:9"  style="margin-left: 1%; margin-right: 1%;">
+                <n-card size="small" style="margin: auto; display: flex; height: 800px; " hoverable>
+                    <n-tabs default-value="p1" type="line" justify-content="space-evenly"
                     tab-style="justify-content:center; display: flex; padding-left: 15px; padding-right: 15px; text-align: center; margin: 0 auto; font-size: 20px; "
-                    class="custom-tabs">
+                    class="custom-tabs" trigger='hover'>
                     <n-tab-pane name="p1" tab="Maix-I">
                         <n-layout has-sider position="absolute" style="height: 700px; position: relative"
                             class="head_background" hoverable>
@@ -697,163 +1661,12 @@
                             </n-grid>
                         </n-layout>
                     </n-tab-pane>
-                </n-tabs>
-            </n-tab-pane>
-            <n-tab-pane name="right" tab="最新动态">
-                <n-card class="news_background" hoverable>
-                    <n-grid cols="10" item-responsive responsive="screen">
-                        <n-grid-item span="10 s:0 m:0 l:0">
-                            <n-card title="桌面版有更多内容喔！" size="huge" style="margin-bottom: 20px;">
-                            </n-card>
-                            <n-card title="构建软件生态" size="small"
-                                style="margin-bottom: 20px; display: flex; max-width: fit-content; max-height: 580px;"
-                                hoverable>
-                                <img class="mobile-img"
-                                    src="https://ts1.cn.mm.bing.net/th/id/R-C.a4c7594450e12d747064ebbd53a99c46?rik=OxRyupwdy96rlw&riu=http%3a%2f%2fwww.0easy.com%2fuploads%2fallimg%2f190823%2f1-1ZR3155010445.jpg&ehk=Jw6QdN7xohD0fC9IBd1mD7u%2fNpAM8xdJMiOth%2frYatg%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1">
-                            </n-card>
-                            <n-card title="交流开源技术" size="small"
-                                style="margin-bottom: 20px; display: flex; max-width: fit-content; max-height: 580px;"
-                                hoverable>
-                                <img class="mobile-img"
-                                    src="https://ts1.cn.mm.bing.net/th/id/R-C.41c59cb20350f4ddea6e445d904d237e?rik=EKFNj5LjGCC4mw&riu=http%3a%2f%2fwww.0easy.com%2fuploads%2fallimg%2f191022%2f1-19102213561D45.png&ehk=47qnsgL8PAjoRIRvgBMknWovL7rltBvj9bJ9DqxUg0g%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1">
-                            </n-card>
-                            <n-card title="推动行业发展" size="small"
-                                style="margin-bottom: 20px; display: flex; max-width: fit-content; max-height: 580px;"
-                                hoverable>
-                                <img class="mobile-img"
-                                    src="https://pic2.zhimg.com/v2-6111e87b41762219d87feacbd5e27158_1440w.jpg?source=172ae18b">
-                            </n-card>
-                        </n-grid-item>
-                        <n-grid-item span="0 s:10 m:10 l:10" style="margin-left: 1%; margin-right: 1%;">
-                            <n-card size="small" style="margin: auto; display: flex; height: 720px; " hoverable>
-                                <n-tabs type="line" trigger='hover'>
-                                    <n-tab-pane name="近期热点事件">
-                                        <n-card style="margin: auto; display: fit-content; max-height: fit-content;">
-                                            <n-carousel effect="card" class="base_background"
-                                                prev-slide-style="transform: translateX(-150%) translateZ(-1200px);"
-                                                next-slide-style="transform: translateX(50%) translateZ(-1200px);"
-                                                :show-dots="false" autoplay draggable style="height: 600px">
-                                                <n-carousel-item :style="{ width: '80%' }">
-                                                    <n-card size="small" hoverable>
-                                                        <img class="carousel-img" src="/static/home/banner-1.jpg">
-                                                    </n-card>
-                                                </n-carousel-item>
-                                                <n-carousel-item :style="{ width: '80%' }">
-                                                    <n-card size="small" hoverable>
-                                                        <img class="carousel-img" src="/static/home/banner-2.jpg">
-                                                        <n-divider title-placement="right">
-                                                            <n-button-group style="margin: 5px; font-size: 16px;">
-                                                                <n-button size="large"
-                                                                    href="https://item.taobao.com/item.htm?spm=a1z10.1-c-s.w4004-24053782153.3.3d3252b1jsMNM4&id=680099020807"
-                                                                    target="_blank" tag="a" type="error" ghost>
-                                                                    产品使用手册
-                                                                </n-button>
-                                                                <n-button size="large"
-                                                                    style="color:#ffffff; " color="#e34548"
-                                                                    href="/news/others/20k_lite_start/20k_lite_start.html"
-                                                                    tag="a" target="_blank" round>
-                                                                    预售价：￥199.00
-                                                                </n-button>
-                                                            </n-button-group>
-                                                        </n-divider>
-                                                    </n-card>
-                                                </n-carousel-item>
-                                                <n-carousel-item :style="{ width: '80%' }">
-                                                    <n-card size="small" hoverable>
-                                                        <!-- <img class="carousel-img" src="/static/home/banner-3.jpg"> -->
-                                                        <a
-                                                        href="http://www.fpgachina.cn/details?id=4c8d620a25bf4c57a27c82b077338510&value=2"
-                                                        tag="a" target="_blank">
-                                                            <img class="carousel-img" src="http://www.fpgachina.cn/images/inside_banner.png">
-                                                            <img class="carousel-img" src="http://www.fpgachina.cn/file/banner/37e513ed1b85480385ec9237167296c8.png">
-                                                        </a>
-                                                    </n-card>
-                                                </n-carousel-item>
-                                                <n-carousel-item :style="{ width: '80%' }">
-                                                    <n-card size="small" hoverable>
-                                                        <img class="carousel-img" src="/static/home/banner-4.jpg">
-                                                    </n-card>
-                                                </n-carousel-item>
-                                            </n-carousel>
-                                        </n-card>
-                                    </n-tab-pane>
-                                    <n-tab-pane name="Primer 20K Lite 上新">
-                                        <n-layout style="position: relative" has-sider position="absolute" hoverable>
-                                            <n-card class="base_background"
-                                                style="margin: auto; display: fit-content; max-height: 600px;">
-                                                <h1>初见 Primer 20K Lite 之点灯奥义</h1>
-                                                <n-divider title-placement="left">
-                                                    <n-rate size="large" readonly :default-value="3" />
-                                                </n-divider>
-                                                <n-ellipsis expand-trigger="click" line-clamp="1" :tooltip="false">
-                                                    Tang Primer 20K 是基于 GW2A-V18PG256C8IC8I7 所设计的一款 DDR3 sodimm
-                                                    封装的核心板，额外准备了两个底板，分别为 Dock 底板和 Lite 底板。作为 Sipeed 所发售的第六款 FPGA 产品，Tang
-                                                    Primer 20K 一直广受关注。<br>
-                                                    得益于 GW2A 丰富的资源，Tang Primer 20K 可以满足多种项目需求；例如当下最火的“IC设计”，可以使用高云所提供的
-                                                    Gowin_EMPU_M1、PicoRV32两款软核来体验一下 mcu 软核，或者也可以用来验证自己所设计的软核。<br>
-                                                </n-ellipsis>
-                                                <div>
-                                                    <img class="card-img"
-                                                        src="https://gd1.alicdn.com/imgextra/i3/2200606237318/O1CN01Xe11pH23vhBRw4zLG_!!2200606237318.jpg_400x400.jpg">
-                                                    <img class="card-img"
-                                                        src="/news/others/20k_lite_start/assets/result.gif">
-                                                </div>
-                                                <n-divider title-placement="right">
-                                                    <n-button-group>
-                                                        <n-button-group style="margin: 5px; font-size: 16px;">
-                                                            <n-button size="large"
-                                                                href="https://item.taobao.com/item.htm?spm=a1z10.1-c-s.w4004-24053782153.3.3d3252b1jsMNM4&id=680099020807"
-                                                                target="_blank" tag="a" type="error" ghost>
-                                                                活动价：￥199.00
-                                                            </n-button>
-                                                            <n-button size="large" style="color:#ffffff;" color="#e34548"
-                                                                href="/news/others/20k_lite_start/20k_lite_start.html"
-                                                                tag="a" target="_blank" round>
-                                                                阅读更多
-                                                            </n-button>
-                                                        </n-button-group>
-                                                    </n-button-group>
-                                                </n-divider>
-                                            </n-card>
-                                        </n-layout>
-                                    </n-tab-pane><n-tab-pane name="MetaSense 系列登场">
-                                        1. 本次新品我们带来了两款，分别是什么
-                                        2. 什么是 tof ？ 什么是 metaSense ？
-                                        4. 与市面上所用的产品有什么不同，亮点是？价格是？在哪购买？
-                                    </n-tab-pane>
-                                    <n-tab-pane name="今年电赛精彩回顾">
-                                        1. 原本想象中的是视觉题，结果 k210 大展身手，麦克风阵列宝刀未老！
-                                        3. 都有哪些精彩现场视频可以回顾呢！
-                                        4. 最后电赛交流群： 来年再战吧！
-                                    </n-tab-pane>
-                                    <n-tab-pane name="MaixHub 全新出发">
-                                        1. maixhub 大更新，更新都有哪些亮点呢？
-                                        2. 陆续支持哪些内容呢？比如 TinyMaix MAIXPY MAIXPY3 等产品系列。
-                                        3. 那么在哪呢？
-                                    </n-tab-pane>
-                                    <n-tab-pane name="全国 FPGA 创新设计大赛">
-                                        1. 比赛内容都有哪些内容呢？从官网节选
-                                        2. 高云系 20k 产品资料都在哪？可以在哪找到？github 上可以用什么关键词。
-                                        3. 在此预祝各位同学大赛中旗开得胜！
-                                    </n-tab-pane>
-                                    <n-tab-pane name="Maix AI 高端战力新品">
-                                        1. 什么是 爱芯 AX620A 芯片亮点是？
-                                        2. 我们提供了什么？对比前两代前辈有什么不同？
-                                        3. 在哪预售呢？？？搭配一些展会靓照
-                                    </n-tab-pane>
-                                    <n-tab-pane name="一次 AI 与 MCU 的碰撞！">
-                                        1. TinyMaix 是什么？特点是？都有哪些新闻？
-                                        2. 你的板子在支持列表吗？向我们请愿吧！
-                                        3. 如何加入开发或讨论呢？
-                                    </n-tab-pane>
-                                </n-tabs>
-                            </n-card>
-                        </n-grid-item>
-                    </n-grid>
+                    </n-tabs>
                 </n-card>
-            </n-tab-pane>
-        </n-tabs>
+            </n-grid>
+        </n-grid>
     </n-card>
+
     <template>
         <ul>
             <li v-for="product in datas['products']" v-bind:style="{ backgroundColor: product.bg }">
